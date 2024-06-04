@@ -1,5 +1,4 @@
 .modalForm {
-    z-index: 3;
     width: 40%;
     position: relative;
     display: flex;
@@ -61,7 +60,7 @@
     left: 0;
     width: 100%;
     height: 100vh;
-    z-index: 2;
+    z-index: 5;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -85,7 +84,7 @@
 }
 
 #modalOverlay.showOverlay {
-    z-index: 2;
+    z-index: 4;
     opacity: 1;
 }
 

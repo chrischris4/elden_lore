@@ -39,6 +39,28 @@
 }
 
 
+#headerTitle {
+    margin: 0;
+    color: #caab79;
+    align-self: center;
+    display: flex;
+    align-items: center;
+    font-size: 26px;
+    position: fixed;
+    top: 10px;
+    z-index: 3;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+
+    .titlePart {
+        font-size: 44px;
+    }
+}
+
+#headerTitle.showTitle {
+    opacity: 1;
+}
+
 .bannerOverlay {
     position: absolute;
     top: 0px;
@@ -76,6 +98,8 @@
 
 
 body {
+    display: flex;
+    flex-direction: column;
     margin: 0;
     color: white;
     background-color: black;
@@ -114,6 +138,7 @@ a{
     position: absolute;
     bottom: 0;
     height: 50px;
+    margin-bottom: 20px;
 ul{
     width: 100%;
     display: flex;
@@ -129,7 +154,6 @@ li{
 /////////////////////////////////////////////////ARTICLE//////////////////////////////////////////
 
 .allItems {
-    z-index: 2;
     position: relative;
     width: 90%;
     margin: auto;
@@ -146,11 +170,11 @@ article {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(34, 34, 34, 0.95);
+    background-color: rgba(34, 34, 34, 0.8);
     border-radius: 20px;
     padding: 20px;
     width: 28%;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 
     .articleImg {
         border-radius: 20px;
@@ -206,11 +230,12 @@ footer {
     top: 50px;
     width: 100%;
     height: 600px;
+    opacity: 1;
+    transition: opacity 0.4s ease-in-out;
 }
 
 #divTest.scrolled {
     opacity: 0.5;
-    
 }
 
 .bannerTest {
@@ -218,10 +243,4 @@ footer {
     top: 50px;
     width: 100%;
     height: 600px;
-    opacity: 1;
-    transition: opacity 0.4s ease-in-out;
-}
-
-#bannerTest.scrolled {
-    opacity: 0.8;
 }

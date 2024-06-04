@@ -4,7 +4,7 @@
   position: fixed;
   padding: 20px 0px;
   z-index: 3;
-  height: 80px;
+  height: 100px;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 55%);
 }
 .header ul {

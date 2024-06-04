@@ -31,6 +31,11 @@ $items = getItems($items, $category);
     <div class="bannerOverlay"></div>
     <img src="https://i.ibb.co/SP9dgs5/8m1e66o7pyka1-1.webp" alt="elden_ring_banner" class="bannerTest">
     </div>
+    <h2 id="headerTitle">
+            <span class="titlePart">E</span>
+            <span class="title">LDEN LOR</span>
+            <span class="titlePart">E</span>
+        </h2>
     <div class="bannerContent">
         <h1>
             <span class="titlePart">E</span>
@@ -164,17 +169,29 @@ delete
                 overlay.classList.remove('showOverlay');
             });
 
-            document.addEventListener('DOMContentLoaded', () => {
-    const divTest = document.querySelector('divTest');
+////////////////////////////////////////SCROLL//////////////////////////////////////////
+
+    const divTest = document.getElementById('divTest');
+    const hedaerTitle = document.getElementById('headerTitle');
+
 
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 0) {
+        if (window.scrollY > 50) {
             divTest.classList.add('scrolled');
+
         } else {
             divTest.classList.remove('scrolled');
         }
     });
-});
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 150) {
+            headerTitle.classList.add('showTitle');
+
+        } else {
+            headerTitle.classList.remove('showTitle');
+        }
+    });
 
         });
     </script>
