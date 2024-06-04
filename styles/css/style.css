@@ -1,0 +1,182 @@
+@font-face {
+  font-family: "mantinia";
+  src: url("../../fonts/Mantinia Regular.otf");
+  font-weight: bold;
+  font-style: normal;
+}
+.bannerContent {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 600px;
+  position: relative;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  object-fit: cover;
+  font-family: "mantinia";
+  color: #caab79;
+}
+.bannerContent h1 {
+  display: flex;
+  align-items: center;
+  font-size: 100px;
+  position: absolute;
+  top: -50px;
+  z-index: 2;
+}
+.bannerContent .titlePart {
+  font-size: 150px;
+}
+.bannerContent h2 {
+  position: absolute;
+  top: 170px;
+}
+
+.bannerOverlay {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.3450630252) 35%);
+}
+
+.bannerImg {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.bannerInput {
+  padding: 7px 10px 5px;
+  font-size: 16px;
+  font-family: "Nunito", sans-serif;
+  color: white;
+  position: absolute;
+  width: 50%;
+  border-radius: 20px;
+  border: 2px solid black;
+  transition: border 0.2s ease-in-out;
+  background-color: rgba(0, 0, 0, 0.3);
+  bottom: 220px;
+}
+
+.bannerInput:focus {
+  border: 2px solid #caab79;
+  outline: none;
+}
+
+.bannerInput::placeholder {
+  color: black; /* Rouge pour les navigateurs modernes */
+}
+
+body {
+  margin: 0;
+  color: white;
+  background-color: black;
+  overflow-x: hidden;
+}
+
+li {
+  cursor: pointer;
+  z-index: 2;
+  font-family: "mantinia";
+  text-align: center;
+  border-radius: 20px;
+  background-color: rgba(202, 171, 121, 0);
+  box-shadow: 0 0 0 0 rgba(202, 171, 121, 0);
+  color: white;
+  transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+li:hover {
+  background-color: #caab79;
+  color: black;
+  box-shadow: 0 0 10px 10px #caab79;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.filter {
+  display: flex;
+  justify-content: center;
+  width: 90%;
+  margin: auto;
+  position: absolute;
+  bottom: 0;
+}
+.filter ul {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+}
+.filter li {
+  width: 140px;
+}
+
+.allItems {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 40px;
+  margin-bottom: 100px;
+}
+
+article {
+  font-family: "Nunito", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(24, 24, 24);
+  border-radius: 20px;
+  padding: 20px;
+  width: 28%;
+  margin-bottom: 20px;
+  border: 2px solid #caab79;
+}
+article .articleInfo {
+  margin: 20px 0;
+  align-self: flex-start;
+}
+article .authorInfo {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+article .editIcon {
+  margin-right: 20px;
+}
+article h3 {
+  margin: 0;
+}
+article h4 {
+  align-self: flex-end;
+  margin: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+footer h2 {
+  font-family: "nunito";
+  font-size: 16px;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,141 @@
+.modalForm {
+    z-index: 3;
+    width: 40%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(34, 34, 34);
+    border-radius: 20px;
+    font-family: 'nunito';
+    height: 60vh;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    #loginClose, #subClose {
+        z-index: 2;
+        cursor: pointer;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        border-radius: 50%;
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    input {
+        color: white;
+        padding: 5px;
+        border-radius: 10px;
+        font-size: 14px;
+        border: 2px solid;
+        background-color: inherit;
+    }
+
+    input:focus {
+        border: 2px solid #caab79;
+        outline: none;
+    }
+
+    button {
+        cursor: pointer;
+        font-size: 16px;
+        font-family: 'nunito';
+        background-color: #caab79;
+    }
+}
+
+#modalLogin, #modalSub {
+    transform: translateX(250%);
+    transition: transform 0.4s ease-in-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#modalLogin.show, #modalSub.show {
+    transform: translateX(0%);
+}
+
+#modalOverlay {
+    display: flex;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#modalOverlay.showOverlay {
+    z-index: 2;
+    opacity: 1;
+}
+
+.formSection {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+
+    label {
+        margin-bottom: 5px;
+    }
+
+    input {
+        box-sizing: border-box;
+        width: 100%;
+    }
+}
+
+.formBtn {
+    border: 2px solid;
+    padding: 5px 10px;
+    border-radius: 20px;
+    align-self: center;
+}
+
+.loginWelcome, .subWelcome {
+    font-family: 'nunito';
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    position: absolute;
+    top: 300px;
+    width: 100%;
+
+    h2{
+        font-size: 18px;
+        background-color: rgba(23, 23, 23, 0.5);
+        padding: 20px;
+        border-radius: 20px;
+        color: #caab79;
+        border: 2px solid #caab79;
+    }
+}
+
+.loginForm {
+    width: 60%;
+    padding: 20px;
+}
+
+.modalDesign {
+    display: flex;
+    justify-content: center;
+    border-radius: 0 20px 20px 0;
+    width: 40%;
+    overflow: hidden;
+}

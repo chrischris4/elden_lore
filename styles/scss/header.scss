@@ -1,0 +1,26 @@
+.header {
+    display: flex;
+    position: relative;
+    padding: 20px 0px;
+
+   ul {
+    margin: 0;
+    margin-top: 8px;
+    display: flex;
+    list-style: none;
+    }
+
+    li {
+        margin-right: 40px;
+    }
+
+    .ost {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+      }
+    
+      #audioPlayer {
+        height: 40px;
+      }
+}
