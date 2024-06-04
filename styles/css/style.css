@@ -22,7 +22,7 @@
   align-items: center;
   font-size: 100px;
   position: absolute;
-  top: -50px;
+  top: 0px;
   z-index: 2;
 }
 .bannerContent .titlePart {
@@ -30,7 +30,7 @@
 }
 .bannerContent h2 {
   position: absolute;
-  top: 170px;
+  top: 220px;
 }
 
 .bannerOverlay {
@@ -42,12 +42,6 @@
   background: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.3450630252) 35%);
 }
 
-.bannerImg {
-  object-fit: cover;
-  height: 100%;
-  width: 100%;
-}
-
 .bannerInput {
   padding: 7px 10px 5px;
   font-size: 16px;
@@ -56,7 +50,7 @@
   position: absolute;
   width: 50%;
   border-radius: 20px;
-  border: 2px solid black;
+  border: 2px solid #caab79;
   transition: border 0.2s ease-in-out;
   background-color: rgba(0, 0, 0, 0.3);
   bottom: 220px;
@@ -68,7 +62,7 @@
 }
 
 .bannerInput::placeholder {
-  color: black; /* Rouge pour les navigateurs modernes */
+  color: rgb(184, 184, 184); /* Rouge pour les navigateurs modernes */
 }
 
 body {
@@ -101,26 +95,29 @@ a {
   color: inherit;
 }
 
-.filter {
+#filter {
   display: flex;
   justify-content: center;
   width: 90%;
   margin: auto;
   position: absolute;
   bottom: 0;
+  height: 50px;
 }
-.filter ul {
+#filter ul {
   width: 100%;
   display: flex;
   justify-content: space-between;
   list-style: none;
   padding: 0;
 }
-.filter li {
+#filter li {
   width: 140px;
 }
 
 .allItems {
+  z-index: 2;
+  position: relative;
   width: 90%;
   margin: auto;
   display: flex;
@@ -136,12 +133,16 @@ article {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(24, 24, 24);
+  background-color: rgba(34, 34, 34, 0.95);
   border-radius: 20px;
   padding: 20px;
   width: 28%;
   margin-bottom: 20px;
-  border: 2px solid #caab79;
+}
+article .articleImg {
+  border-radius: 20px;
+  margin-top: 20px;
+  width: 100%;
 }
 article .articleInfo {
   margin: 20px 0;
@@ -177,6 +178,30 @@ footer {
 footer h2 {
   font-family: "nunito";
   font-size: 16px;
+}
+
+#divTest {
+  position: fixed;
+  top: 50px;
+  width: 100%;
+  height: 600px;
+}
+
+#divTest.scrolled {
+  opacity: 0.5;
+}
+
+.bannerTest {
+  object-fit: cover;
+  top: 50px;
+  width: 100%;
+  height: 600px;
+  opacity: 1;
+  transition: opacity 0.4s ease-in-out;
+}
+
+#bannerTest.scrolled {
+  opacity: 0.8;
 }
 
 /*# sourceMappingURL=style.css.map */

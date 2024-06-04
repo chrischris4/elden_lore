@@ -23,7 +23,7 @@
         align-items: center;
         font-size: 100px;
         position: absolute;
-        top: -50px;
+        top: 0px;
         z-index: 2;
     }
 
@@ -33,7 +33,7 @@
 
     h2{
         position: absolute;
-        top: 170px;
+        top: 220px;
     }
 
 }
@@ -49,13 +49,6 @@
 }
 
 
-
-.bannerImg {
-    object-fit: cover;
-    height: 100%;
-    width: 100%;
-}
-
 .bannerInput {
     padding: 7px 10px 5px ;
     font-size: 16px;
@@ -64,11 +57,12 @@
     position: absolute;
     width: 50%;
     border-radius: 20px;
-    border: 2px solid black;
+    border: 2px solid #caab79;
     transition: border 0.2s ease-in-out;
     background-color: rgba(0, 0, 0, 0.3);
     bottom: 220px;
 }
+
 
 .bannerInput:focus {
     border: 2px solid #caab79;
@@ -76,7 +70,7 @@
 }
 
 .bannerInput::placeholder {
-    color: black; /* Rouge pour les navigateurs modernes */
+    color: rgb(184, 184, 184); /* Rouge pour les navigateurs modernes */
 }
 //////////////////////////////////////////////////////////////////////
 
@@ -112,13 +106,14 @@ a{
     color: inherit;
 }
 
-.filter {
+#filter {
     display: flex;
     justify-content: center;
     width: 90%;
     margin: auto;
     position: absolute;
     bottom: 0;
+    height: 50px;
 ul{
     width: 100%;
     display: flex;
@@ -131,11 +126,11 @@ li{
 }
 }
 
-/////////////////////////////////////////////////ARTICLE
-/// 
-/// 
+/////////////////////////////////////////////////ARTICLE//////////////////////////////////////////
 
 .allItems {
+    z-index: 2;
+    position: relative;
     width: 90%;
     margin: auto;
     display: flex;
@@ -151,12 +146,17 @@ article {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(24, 24, 24);
+    background-color: rgba(34, 34, 34, 0.95);
     border-radius: 20px;
     padding: 20px;
     width: 28%;
     margin-bottom: 20px;
-    border: 2px solid #caab79;
+
+    .articleImg {
+        border-radius: 20px;
+        margin-top: 20px;
+        width: 100%;
+    }
 
     .articleInfo {
         margin: 20px 0;
@@ -199,4 +199,29 @@ footer {
         font-family: 'nunito';
         font-size: 16px;
     }
+}
+
+#divTest {
+    position: fixed;
+    top: 50px;
+    width: 100%;
+    height: 600px;
+}
+
+#divTest.scrolled {
+    opacity: 0.5;
+    
+}
+
+.bannerTest {
+    object-fit: cover;
+    top: 50px;
+    width: 100%;
+    height: 600px;
+    opacity: 1;
+    transition: opacity 0.4s ease-in-out;
+}
+
+#bannerTest.scrolled {
+    opacity: 0.8;
 }

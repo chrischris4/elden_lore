@@ -27,9 +27,11 @@ $items = getItems($items, $category);
 <body>
     <!-- inclusion de l'entête du site -->
     <?php require_once(__DIR__ . '/header.php'); ?>
-    
+    <div id="divTest">
+    <div class="bannerOverlay"></div>
+    <img src="https://i.ibb.co/SP9dgs5/8m1e66o7pyka1-1.webp" alt="elden_ring_banner" class="bannerTest">
+    </div>
     <div class="bannerContent">
-        <div class="bannerOverlay"></div>
         <h1>
             <span class="titlePart">E</span>
             <span class="title">LDEN LOR</span>
@@ -37,15 +39,14 @@ $items = getItems($items, $category);
         </h1>
         <h2>c'est ici que les sans éclats partagent leurs connaissances concernant l'entre terre</h2>
         <input type="text" class="bannerInput" id="searchInput" placeholder="Rechercher..">
-        <img src="https://i.ibb.co/SP9dgs5/8m1e66o7pyka1-1.webp" alt="elden_ring_banner" class="bannerImg">
-        <div class="filter">
+        <div id="filter">
             <ul>
-                <li><a href="#" data-category="all">TOUT</a></li>
-                <li><a href="#" data-category="arme">ARMES</a></li>
-                <li><a href="#" data-category="boss">BOSS</a></li>
-                <li><a href="#" data-category="objet">OBJETS</a></li>
-                <li><a href="#" data-category="personnage">PERSONNAGES</a></li>
-                <li><a href="#" data-category="pnj">PNJ</a></li>
+                <li data-category="all">TOUT</li>
+                <li data-category="arme">ARMES</li>
+                <li data-category="boss">BOSS</li>
+                <li data-category="objet">OBJETS</li>
+                <li data-category="personnage">PERSONNAGES</li>
+                <li data-category="pnj">PNJ</li>
             </ul>
         </div>
     </div>
@@ -58,6 +59,8 @@ $items = getItems($items, $category);
         <?php foreach (getItems($items) as $item) : ?>
             <article class="item" data-category="<?php echo strtolower($item['category']); ?>">
                 <h3><a href="items_read.php?id=<?php echo($item['items_id']); ?>"><?php echo($item['title']); ?></a></h3>
+                <img src="https://i.ibb.co/SP9dgs5/8m1e66o7pyka1-1.webp" alt="elden_ring_banner" class="articleImg">
+
                 <div class="articleInfo"><?php echo $item['info_item']; ?></div>
                 <div class="authorInfo">
                 <div>
@@ -80,8 +83,9 @@ delete
     
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const filterLinks = document.querySelectorAll('.filter ul li a');
+            const filterLinks = document.querySelectorAll('#filter ul li ');
             const items = document.querySelectorAll('.allItems .item');
+            const searchInput = document.getElementById('searchInput');
     
             filterLinks.forEach(link => {
                 link.addEventListener('click', (e) => {
@@ -99,8 +103,6 @@ delete
             });
     
             // Recherche d'articles par titre
-            const searchInput = document.getElementById('searchInput');
-    
             searchInput.addEventListener('input', () => {
                 const searchText = searchInput.value.trim().toLowerCase();
     
@@ -161,6 +163,19 @@ delete
                 loginForm.classList.remove('show');
                 overlay.classList.remove('showOverlay');
             });
+
+            document.addEventListener('DOMContentLoaded', () => {
+    const divTest = document.querySelector('divTest');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 0) {
+            divTest.classList.add('scrolled');
+        } else {
+            divTest.classList.remove('scrolled');
+        }
+    });
+});
+
         });
     </script>
 </body>
