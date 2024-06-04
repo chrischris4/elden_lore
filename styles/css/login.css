@@ -4,10 +4,14 @@
   position: relative;
   display: flex;
   justify-content: center;
-  background-color: rgb(34, 34, 34);
+  background-color: rgba(34, 34, 34, 0.95);
   border-radius: 20px;
   font-family: "nunito";
   height: 60vh;
+}
+.modalForm h2 {
+  margin: 0;
+  margin-bottom: 20px;
 }
 .modalForm form {
   display: flex;
@@ -22,7 +26,7 @@
   right: 20px;
   border-radius: 50%;
   padding: 10px;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.7);
 }
 .modalForm input {
   color: white;
@@ -88,14 +92,20 @@
   margin-bottom: 5px;
 }
 .formSection input {
+  border-radius: 5px;
   box-sizing: border-box;
   width: 100%;
 }
 
 .formBtn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: 2px solid;
   padding: 5px 10px;
-  border-radius: 20px;
+  height: 50px;
+  border-radius: 5px;
   align-self: center;
 }
 
@@ -122,6 +132,9 @@
 .loginForm {
   width: 60%;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .modalDesign {

@@ -24,7 +24,7 @@ close
                 <label for="password" class="formLabel">Mot de passe</label>
                 <input type="password" class="formControl" id="password" name="password" placeholder="Votre mot de passe">
             </div>
-            <button type="submit" class="formBtn">Se Connecter</button>
+            <button type="submit" class="formBtn">Se connecter</button>
         </form>
     </div>
     <div class="modalDesign">

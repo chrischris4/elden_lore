@@ -23,7 +23,7 @@
     </nav>
     <div class="ost">
         <audio id="audioPlayer" controls>
-            <source src="audio/Elden_song.mp3" type="audio/mpeg">
+            <source src="audio/eldenSong.mp3" type="audio/mpeg">
             Votre navigateur ne prend pas en charge l'élément audio.
         </audio>
     </div>
