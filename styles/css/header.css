@@ -27,8 +27,8 @@
 }
 
 #header.showTitle {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 30%);
-  height: 250px;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0) 5%, rgb(0, 0, 0) 20%);
+  height: 220px;
 }
 
 /*# sourceMappingURL=header.css.map */
