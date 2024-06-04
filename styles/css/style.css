@@ -64,6 +64,7 @@
 }
 
 .bannerInput {
+  z-index: 3;
   padding: 7px 10px 5px;
   font-size: 16px;
   font-family: "Nunito", sans-serif;
@@ -75,6 +76,7 @@
   transition: border 0.2s ease-in-out;
   background-color: rgba(0, 0, 0, 0.3);
   bottom: 220px;
+  height: 20px;
 }
 
 .bannerInput:focus {
@@ -84,6 +86,11 @@
 
 .bannerInput::placeholder {
   color: rgb(184, 184, 184); /* Rouge pour les navigateurs modernes */
+}
+
+#searchInput.showTitle {
+  position: fixed;
+  top: 100px;
 }
 
 body {
@@ -122,7 +129,6 @@ a {
   display: flex;
   justify-content: center;
   width: 90%;
-  margin: auto;
   position: absolute;
   bottom: 0;
   height: 50px;
@@ -137,6 +143,12 @@ a {
 }
 #filter li {
   width: 140px;
+}
+
+#filter.showTitle {
+  z-index: 3;
+  position: fixed;
+  top: 155px;
 }
 
 .allItems {
@@ -213,7 +225,7 @@ footer h2 {
 }
 
 #divTest.scrolled {
-  opacity: 0.5;
+  opacity: 0.7;
 }
 
 .bannerTest {

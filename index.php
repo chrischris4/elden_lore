@@ -172,8 +172,9 @@ delete
 ////////////////////////////////////////SCROLL//////////////////////////////////////////
 
     const divTest = document.getElementById('divTest');
-    const hedaerTitle = document.getElementById('headerTitle');
-
+    const headerTitle = document.getElementById('headerTitle');
+    const filter = document.getElementById('filter');
+    const header = document.getElementById('header');
 
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
@@ -190,6 +191,34 @@ delete
 
         } else {
             headerTitle.classList.remove('showTitle');
+        }
+    });
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 245) {
+            searchInput.classList.add('showTitle');
+
+        } else {
+            searchInput.classList.remove('showTitle');
+        }
+    });
+
+//////////////////////////////////FILTER
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 375) {
+            filter.classList.add('showTitle');
+
+        } else {
+            filter.classList.remove('showTitle');
+        }
+    });
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 375) {
+            header.classList.add('showTitle');
+
+        } else {
+            header.classList.remove('showTitle');
         }
     });
 

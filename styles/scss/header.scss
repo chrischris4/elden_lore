@@ -1,4 +1,4 @@
-.header {
+#header {
     display: flex;
     width: 100%;
     position: fixed;
@@ -6,6 +6,7 @@
     z-index: 3;
     height: 100px;
     background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 55%);
+    transition: height 0.4s ease-in-out, background 0.3s ease-in-out;
 
    ul {
     margin: 0;
@@ -27,4 +28,9 @@
       #audioPlayer {
         height: 40px;
       }
+}
+
+#header.showTitle {
+  background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 30%);
+  height: 250px;
 }
