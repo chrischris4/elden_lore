@@ -6,7 +6,6 @@
     z-index: 3;
     height: 100px;
     background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 55%);
-    transition: height 0.4s ease-in-out, background 0.3s ease-in-out;
 
    ul {
     margin: 0;
@@ -30,7 +29,4 @@
       }
 }
 
-#header.showTitle {
-  background: linear-gradient(0deg, rgba(0,0,0,0) 5%, rgba(0,0,0,1) 20%);
-  height: 220px;
-}
+

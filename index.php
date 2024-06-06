@@ -9,6 +9,7 @@ $category = isset($_GET['category']) ? $_GET['category'] : null;
 $items = getItems($items, $category);
 ?>
 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -205,7 +206,7 @@ delete
 
 //////////////////////////////////FILTER
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 375) {
+        if (window.scrollY > 335) {
             filter.classList.add('showTitle');
 
         } else {

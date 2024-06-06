@@ -12,7 +12,7 @@
                 <?php endif; ?>
                 <?php if (isset($_SESSION['LOGGED_USER'])) : ?>
                     <li>
-                        <a href="items_create.php">AJOUTEZ UN ARTICLE !</a>
+                        <a href="#" id="createLink">AJOUTEZ UN ARTICLE !</a>
                     </li>
                     <li>
                         <a href="logout.php">DECONNEXION</a>

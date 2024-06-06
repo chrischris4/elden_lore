@@ -5,6 +5,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'agmenaRegular';
+    src: url("../../fonts/Agmena\ Pro\ Regular.ttf");
+    font-weight: bold;
+    font-style: normal;
+}
+
 .bannerContent {
     display: flex;
     justify-content: center;
@@ -144,23 +151,29 @@ a{
     position: absolute;
     bottom: 0;
     height: 50px;
-    margin-bottom: 20px;
+    padding-bottom: 35px;
+    border-bottom: 2px solid #caab7900;
+    transition: border-bottom 0.4s ease-in-out;
+    overflow: hidden;
+
 ul{
-    width: 100%;
+    width: 95%;
     display: flex;
     justify-content: space-between;
     list-style: none;
     padding: 0;
 }
 li{
-    width: 140px;
+    padding: 0 20px;
+
 }
 }
 
 #filter.showTitle {
     z-index: 3;
     position: fixed;
-    top: 155px;
+    top: 175px;
+    border-bottom: 2px solid #caab79;
 }
 
 /////////////////////////////////////////////////ARTICLE//////////////////////////////////////////
@@ -177,7 +190,7 @@ li{
 }
 
 article {
-    font-family: "Nunito", sans-serif;
+    font-family: 'agmenaRegular';
     display: flex;
     flex-direction: column;
     justify-content: space-between;
