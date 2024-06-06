@@ -27,7 +27,17 @@ $items = getItems($items, $category);
 </head>
 <body>
     <!-- inclusion de l'entête du site -->
+    <?php if (isset($_SESSION['LOGGED_USER'])) : ?>
+    <?php require_once(__DIR__ . '/items_create.php'); ?>
+        <?php endif; ?>
+        <?php require_once(__DIR__ . '/login.php'); ?>
+    <?php require_once(__DIR__ . '/subscribe.php'); ?>
+
+        
     <?php require_once(__DIR__ . '/header.php'); ?>
+
+
+
     <div id="divTest">
     <div class="bannerOverlay"></div>
     <img src="https://i.ibb.co/SP9dgs5/8m1e66o7pyka1-1.webp" alt="elden_ring_banner" class="bannerTest">
@@ -58,8 +68,6 @@ $items = getItems($items, $category);
     </div>
     
     <!-- Formulaire de connexion -->
-    <?php require_once(__DIR__ . '/login.php'); ?>
-    <?php require_once(__DIR__ . '/subscribe.php'); ?>
     
     <div id="allItems">
         <?php foreach (getItems($items) as $item) : ?>
@@ -91,9 +99,12 @@ delete
     
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+//////////////////////////////////////////////FILTERS///////////////////////////
             const filterLinks = document.querySelectorAll('#filter ul li ');
             const items = document.querySelectorAll('#allItems .item');
             const searchInput = document.getElementById('searchInput');
+            const filter = document.getElementById('filter');
+
     
             filterLinks.forEach(link => {
                 link.addEventListener('click', (e) => {
@@ -133,14 +144,18 @@ delete
                     });
                 }
             });
+
+////////////////////////////////OPEN FORM//////////////////////////
     
             // Affichage du formulaire de connexion
+            <?php if (!isset($_SESSION['LOGGED_USER'])) : ?>
             const loginLink = document.getElementById('loginLink');
             const loginForm = document.getElementById('modalLogin');
             const overlay = document.getElementById('modalOverlay');
     
             loginLink.addEventListener('click', (e) => {
                 e.preventDefault();
+                document.body.classList.add('no-scroll');
                 loginForm.classList.add('show');
                 overlay.classList.add('showOverlay'); // Ajoute la classe 'show'
             });
@@ -151,15 +166,44 @@ delete
     
             subLink.addEventListener('click', (e) => {
                 e.preventDefault();
+                document.body.classList.add('no-scroll');
                 subForm.classList.add('show');
                 overlay.classList.add('showOverlay'); // Ajoute la classe 'show'
             });
+            <?php endif; ?>
+
+
+            <?php if (isset($_SESSION['LOGGED_USER'])) : ?>
+            const createLink = document.getElementById('createLink');
+            const createForm = document.getElementById('modalCreate');
+            const overlay = document.getElementById('modalOverlay');
+    
+            createLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                document.body.classList.add('no-scroll');
+                createForm.classList.add('show');
+                overlay.classList.add('showOverlay'); // Ajoute la classe 'show'
+            });
+
+//////////////////////////////////////////CLOSE////////////////////////////////
+
+            const createClose = document.getElementById('createClose');
+    
+            createClose.addEventListener('click', (e) => {
+                e.preventDefault();
+                document.body.classList.remove('no-scroll');
+                createForm.classList.remove('show');
+                overlay.classList.remove('showOverlay');
+            });
+            <?php endif; ?>
+
     
             // Fermeture du formulaire de connexion
             const subClose = document.getElementById('subClose');
     
             subClose.addEventListener('click', (e) => {
                 e.preventDefault();
+                document.body.classList.remove('no-scroll');
                 subForm.classList.remove('show');
                 overlay.classList.remove('showOverlay');
             });
@@ -168,6 +212,7 @@ delete
     
             loginClose.addEventListener('click', (e) => {
                 e.preventDefault();
+                document.body.classList.remove('no-scroll');
                 loginForm.classList.remove('show');
                 overlay.classList.remove('showOverlay');
             });
@@ -176,7 +221,6 @@ delete
 
     const divTest = document.getElementById('divTest');
     const headerTitle = document.getElementById('headerTitle');
-    const filter = document.getElementById('filter');
     const allItems = document.getElementById('allItems');
     const header = document.getElementById('header');
 
@@ -184,9 +228,12 @@ delete
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
             divTest.classList.add('scrolled');
+            searchInput.classList.add('showTitle');
+            
 
         } else {
             divTest.classList.remove('scrolled');
+            searchInput.classList.remove('showTitle');
         }
     });
 
@@ -210,7 +257,7 @@ delete
 
 //////////////////////////////////FILTER
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 335) {
+        if (window.scrollY > 377) {
             filter.classList.add('showTitle');
 
         } else {
@@ -219,7 +266,7 @@ delete
     });
 
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 335) {
+        if (window.scrollY > 380) {
             header.classList.add('showTitle');
 
         } else {

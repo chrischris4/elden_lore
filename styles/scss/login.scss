@@ -1,4 +1,5 @@
 .modalForm {
+    z-index: 4;
     width: 40%;
     position: relative;
     display: flex;
@@ -19,8 +20,8 @@
         width: 100%;
     }
 
-    #loginClose, #subClose {
-        z-index: 2;
+    #loginClose, #subClose, #createClose {
+        z-index: 5;
         cursor: pointer;
         position: absolute;
         top: 20px;
@@ -52,11 +53,11 @@
     }
 }
 
-#modalLogin, #modalSub {
+#modalLogin, #modalSub, #modalCreate {
     transform: translateX(250%);
     transition: transform 0.4s ease-in-out;
-    position: absolute;
-    top: 0;
+    position: fixed;
+    bottom: 0;
     left: 0;
     width: 100%;
     height: 100vh;
@@ -66,21 +67,22 @@
     align-items: center;
 }
 
-#modalLogin.show, #modalSub.show {
+#modalLogin.show, #modalSub.show, #modalCreate.show {
     transform: translateX(0%);
 }
 
 #modalOverlay {
+    overflow: hidden;
     display: flex;
     z-index: -1;
     opacity: 0;
     transition: opacity 0.4s ease-in-out;
-    position: absolute;
-    top: 0;
+    position: fixed;
+    bottom: 0;
     left: 0;
     width: 100%;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 #modalOverlay.showOverlay {

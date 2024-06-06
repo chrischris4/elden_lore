@@ -101,7 +101,7 @@
 }
 
 .bannerInput {
-  z-index: 3;
+  z-index: 2;
   padding: 7px 10px 5px;
   font-size: 16px;
   font-family: "Nunito", sans-serif;
@@ -110,7 +110,7 @@
   width: 50%;
   border-radius: 20px;
   border: 2px solid #caab79;
-  transition: border 0.2s ease-in-out;
+  transition: border 0.2s ease-in-out, z-index 0.4s ease-in-out;
   background-color: rgba(0, 0, 0, 0.3);
   bottom: 220px;
   height: 20px;
@@ -126,6 +126,7 @@
 }
 
 #searchInput.showTitle {
+  z-index: 2;
   position: fixed;
   top: 100px;
 }
@@ -137,6 +138,10 @@ body {
   color: white;
   background-color: black;
   overflow-x: hidden;
+}
+
+body.no-scroll {
+  overflow: hidden;
 }
 
 li {
@@ -162,14 +167,14 @@ a {
 }
 
 #filter {
-  z-index: 5;
+  z-index: 2;
   display: flex;
   justify-content: center;
   width: 90%;
   position: absolute;
   bottom: 0;
   height: 50px;
-  padding-bottom: 35px;
+  padding-bottom: 20px;
   border-bottom: 2px solid rgba(202, 171, 121, 0);
   transition: border-bottom 0.4s ease-in-out;
 }
@@ -185,8 +190,9 @@ a {
 }
 
 #filter.showTitle {
+  z-index: 2;
   position: fixed;
-  top: 177px;
+  top: 150px;
   border-bottom: 2px solid #caab79;
 }
 
@@ -210,7 +216,7 @@ article {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(58, 58, 58, 0.8);
+  background: linear-gradient(0deg, rgba(46, 46, 46, 0.9) 75%, rgba(255, 255, 255, 0.3) 100%);
   border-radius: 10px;
   padding: 20px;
   width: 26%;
@@ -220,7 +226,7 @@ article {
 article .articleImg {
   z-index: 2;
   border: 4px solid black;
-  border-radius: 10px;
+  border-radius: 2px;
   margin-top: 20px;
   width: 100%;
 }
