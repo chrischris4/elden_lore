@@ -2,10 +2,14 @@
   display: flex;
   width: 100%;
   position: fixed;
+  top: 0;
   padding: 20px 0px;
-  z-index: 3;
-  height: 100px;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 55%);
+  z-index: 2;
+  height: 0px;
+  background-color: black;
+  box-shadow: 0 0 60px 70px black;
+  opacity: 1;
+  transition: height 0.4s ease-in-out, box-shadow 0.4s ease-in-out, opacity 0.4s ease-in-out;
 }
 #header ul {
   margin: 0;
@@ -23,6 +27,12 @@
 }
 #header #audioPlayer {
   height: 40px;
+}
+
+#header.showTitle {
+  opacity: 0.9;
+  box-shadow: 0 0 0 0 black;
+  height: 223px;
 }
 
 /*# sourceMappingURL=header.css.map */

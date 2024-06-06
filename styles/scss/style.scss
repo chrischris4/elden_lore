@@ -12,6 +12,21 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'agmenaBold';
+    src: url("../../fonts/Amena\ Pro\ Bold.ttf");
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'agmenaBook';
+    src: url("../../fonts/Agmena\ Pro\ Book.ttf");
+    font-weight: bold;
+    font-style: normal;
+}
+
 .bannerContent {
     display: flex;
     justify-content: center;
@@ -31,7 +46,6 @@
         font-size: 100px;
         position: absolute;
         top: 0px;
-        z-index: 2;
     }
 
     .titlePart {
@@ -66,6 +80,26 @@
 
 #headerTitle.showTitle {
     opacity: 1;
+}
+
+#divTest {
+    position: fixed;
+    top: 50px;
+    width: 100%;
+    height: 600px;
+    opacity: 1;
+    transition: opacity 0.6s ease-in-out;
+}
+
+#divTest.scrolled {
+    opacity: 0.8;
+}
+
+.bannerTest {
+    object-fit: cover;
+    top: 50px;
+    width: 100%;
+    height: 600px;
 }
 
 .bannerOverlay {
@@ -122,7 +156,6 @@ body {
 
 li{
     cursor: pointer;
-    z-index: 2;
     font-family: 'mantinia';
     text-align: center;
     border-radius: 20px;
@@ -145,6 +178,7 @@ a{
 }
 
 #filter {
+    z-index: 5;
     display: flex;
     justify-content: center;
     width: 90%;
@@ -154,7 +188,7 @@ a{
     padding-bottom: 35px;
     border-bottom: 2px solid #caab7900;
     transition: border-bottom 0.4s ease-in-out;
-    overflow: hidden;
+
 
 ul{
     width: 95%;
@@ -170,18 +204,17 @@ li{
 }
 
 #filter.showTitle {
-    z-index: 3;
     position: fixed;
-    top: 175px;
+    top: 177px;
     border-bottom: 2px solid #caab79;
 }
 
 /////////////////////////////////////////////////ARTICLE//////////////////////////////////////////
 
-.allItems {
+#allItems {z-index: 0;
     position: relative;
-    width: 90%;
     margin: auto;
+    width: 90%;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -189,30 +222,52 @@ li{
     margin-bottom: 100px;
 }
 
+
 article {
+    position: relative;
+    overflow: hidden;
     font-family: 'agmenaRegular';
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(34, 34, 34, 0.9);
-    border-radius: 20px;
+    background-color: rgba(134, 119, 102, 0.9);
+    border-radius: 10px;
     padding: 20px;
-    width: 28%;
+    width: 26%;
     margin-bottom: 40px;
+    border: 8px solid black;
 
     .articleImg {
-        border-radius: 20px;
+        z-index: 2;
+        border: 4px solid black;
+        border-radius: 10px;
         margin-top: 20px;
         width: 100%;
     }
 
+    .articleBackground {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        opacity: 0.7;
+    }
+
     .articleInfo {
+        font-family: 'agmenaBook';
+        z-index: 2;
+        width: 100%;
+        font-size: 18px;
         margin: 20px 0;
         align-self: flex-start;
+        padding-bottom: 20px;
+        border-bottom: 4px solid black;
     }
 
     .authorInfo {
+        z-index: 2;
+        font-size: 16px;
         width: 100%;
         display: flex;
         justify-content: space-between;
@@ -224,10 +279,14 @@ article {
     }
 
     h3 {
+        z-index: 2;
+        font-size: 22px;
         margin: 0;
+        align-self: flex-start;
     }
 
     h4 {
+        z-index: 2;
         align-self: flex-end;
         margin: 0;
     }
@@ -250,22 +309,3 @@ footer {
     }
 }
 
-#divTest {
-    position: fixed;
-    top: 50px;
-    width: 100%;
-    height: 600px;
-    opacity: 1;
-    transition: opacity 0.4s ease-in-out;
-}
-
-#divTest.scrolled {
-    opacity: 0.6;
-}
-
-.bannerTest {
-    object-fit: cover;
-    top: 50px;
-    width: 100%;
-    height: 600px;
-}

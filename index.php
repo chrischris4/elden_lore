@@ -61,9 +61,12 @@ $items = getItems($items, $category);
     <?php require_once(__DIR__ . '/login.php'); ?>
     <?php require_once(__DIR__ . '/subscribe.php'); ?>
     
-    <div class="allItems">
+    <div id="allItems">
         <?php foreach (getItems($items) as $item) : ?>
             <article class="item" data-category="<?php echo strtolower($item['category']); ?>">
+            <div class="articleBackground">
+                <img src="https://i.ibb.co/JQWNDhW/dark-texture-watercolor-1.webp" alt="">
+            </div>
                 <h3><a href="items_read.php?id=<?php echo($item['items_id']); ?>"><?php echo($item['title']); ?></a></h3>
                 <img src="https://i.ibb.co/SP9dgs5/8m1e66o7pyka1-1.webp" alt="elden_ring_banner" class="articleImg">
 
@@ -84,13 +87,12 @@ delete
         <?php endforeach ?>
     </div>
     
-    <!-- inclusion du bas de page du site -->
     <?php require_once(__DIR__ . '/footer.php'); ?>
     
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const filterLinks = document.querySelectorAll('#filter ul li ');
-            const items = document.querySelectorAll('.allItems .item');
+            const items = document.querySelectorAll('#allItems .item');
             const searchInput = document.getElementById('searchInput');
     
             filterLinks.forEach(link => {
@@ -175,7 +177,9 @@ delete
     const divTest = document.getElementById('divTest');
     const headerTitle = document.getElementById('headerTitle');
     const filter = document.getElementById('filter');
+    const allItems = document.getElementById('allItems');
     const header = document.getElementById('header');
+
 
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
@@ -215,14 +219,13 @@ delete
     });
 
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 375) {
+        if (window.scrollY > 335) {
             header.classList.add('showTitle');
 
         } else {
             header.classList.remove('showTitle');
         }
     });
-
         });
     </script>
 </body>
