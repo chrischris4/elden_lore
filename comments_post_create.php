@@ -14,25 +14,25 @@ $postData = $_POST;
 
 if (
     !isset($postData['comment']) ||
-    !isset($postData['recipe_id']) ||
-    !is_numeric($postData['recipe_id'])
+    !isset($postData['items_id']) ||
+    !is_numeric($postData['items_id'])
 ) {
     echo('Le commentaire est invalide.');
     return;
 }
 
 $comment = trim(strip_tags($postData['comment']));
-$recipeId = (int)$postData['recipe_id'];
+$itemsId = (int)$postData['items_id'];
 
 if ($comment === '') {
     echo 'Le commentaire ne peut pas être vide.';
     return;
 }
 
-$insertRecipe = $mysqlClient->prepare('INSERT INTO comments(comment, recipe_id, user_id) VALUES (:comment, :recipe_id, :user_id)');
-$insertRecipe->execute([
+$insertItem = $mysqlClient->prepare('INSERT INTO comments(comment, items_id, user_id) VALUES (:comment, :items_id, :user_id)');
+$insertItem->execute([
     'comment' => $comment,
-    'recipe_id' => $recipeId,
+    'items_id' => $itemsId,
     'user_id' => $_SESSION['LOGGED_USER']['user_id'],
 ]);
 

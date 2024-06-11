@@ -96,7 +96,7 @@ foreach ($itemWithComments as $comment) {
                 <div class="comment">
                     <p><?php echo htmlspecialchars($comment['created_at']); ?></p>
                     <p><?php echo htmlspecialchars($comment['comment']); ?></p>
-                    <i>(<?php echo htmlspecialchars($comment['full_name']); ?>)</i>
+                    <i>(<?php echo htmlspecialchars($comment['pseudo']); ?>)</i>
                 </div>
             <?php endforeach; ?>
         </div>

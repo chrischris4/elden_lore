@@ -12,6 +12,7 @@ $postData = $_POST;
 if (isset($postData['pseudo']) && isset($postData['password'])) {
     if (empty(trim($postData['pseudo'])) || empty(trim($postData['password']))) {
         $_SESSION['LOGIN_ERROR_MESSAGE'] = 'Il faut un pseudo et un mot de passe pour soumettre le formulaire.';
+        header('Location: login.php'); // Redirection vers la page de login
         exit();
     }
 
@@ -30,13 +31,21 @@ if (isset($postData['pseudo']) && isset($postData['password'])) {
                 'pseudo' => $user['pseudo'],
                 'user_id' => $user['user_id'],
             ];
+            header('Location: /index.php'); // Redirection vers la page d'accueil après connexion réussie
             exit();
         } else {
             $_SESSION['LOGIN_ERROR_MESSAGE'] = 'Les informations envoyées ne permettent pas de vous identifier.';
+            header('Location: /'); // Redirection vers la page de login
             exit();
         }
     } catch (Exception $e) {
         $_SESSION['LOGIN_ERROR_MESSAGE'] = 'Erreur lors de la connexion : ' . $e->getMessage();
+        header('Location: /'); // Redirection vers la page de login
         exit();
     }
+} else {
+    $_SESSION['LOGIN_ERROR_MESSAGE'] = 'Formulaire de connexion invalide.';
+    header('Location: /index.php'); // Redirection vers la page de login
+    exit();
 }
+?>

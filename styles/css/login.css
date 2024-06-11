@@ -9,7 +9,7 @@
   font-family: "nunito";
   height: 60vh;
 }
-.modalForm h2 {
+.modalForm h1 {
   margin: 0;
   margin-bottom: 20px;
 }
@@ -18,7 +18,7 @@
   flex-direction: column;
   width: 100%;
 }
-.modalForm #loginClose, .modalForm #subClose, .modalForm #createClose {
+.modalForm #loginClose, .modalForm #subClose, .modalForm #createClose, .modalForm #deleteClose, .modalForm #updateClose {
   z-index: 5;
   cursor: pointer;
   position: absolute;
@@ -46,8 +46,22 @@
   font-family: "nunito";
   background-color: #caab79;
 }
+.modalForm textarea {
+  font-family: "nunito";
+  padding: 10px;
+  resize: none;
+  outline: none;
+  border-radius: 5px;
+  height: 200px;
+}
 
-#modalLogin, #modalSub, #modalCreate {
+.createStyle {
+  height: inherit;
+  max-height: 90vh;
+  width: 60%;
+}
+
+#modalLogin, #modalSub, #modalCreate, #modalDelete, #modalUpdate {
   transform: translateX(250%);
   transition: transform 0.4s ease-in-out;
   position: fixed;
@@ -61,7 +75,7 @@
   align-items: center;
 }
 
-#modalLogin.show, #modalSub.show, #modalCreate.show {
+#modalLogin.show, #modalSub.show, #modalCreate.show, #modalDelete.show, #modalUpdate.show {
   transform: translateX(0%);
 }
 
@@ -144,6 +158,12 @@
   border-radius: 0 20px 20px 0;
   width: 40%;
   overflow: hidden;
+}
+
+select {
+  outline: none;
+  height: 30px;
+  border-radius: 5px;
 }
 
 /*# sourceMappingURL=login.css.map */

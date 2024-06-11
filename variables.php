@@ -8,6 +8,6 @@ $usersStatement = $mysqlClient->prepare('SELECT * FROM users');
 $usersStatement->execute();
 $users = $usersStatement->fetchAll();
 
-$itemsStatement = $mysqlClient->prepare('SELECT * FROM items WHERE is_enabled is TRUE');
+$itemsStatement = $mysqlClient->prepare('SELECT * FROM items');
 $itemsStatement->execute();
 $items = $itemsStatement->fetchAll();
