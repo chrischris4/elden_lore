@@ -21,7 +21,7 @@
         width: 100%;
     }
 
-    #loginClose, #subClose, #createClose, #deleteClose, #updateClose{
+    #loginClose, #subClose, #createClose {
         z-index: 5;
         cursor: pointer;
         position: absolute;
@@ -31,36 +31,40 @@
         padding: 10px;
         background-color: rgba(0, 0, 0, 0.7);
     }
+}
 
-    input {
-        color: white;
-        padding: 5px;
-        border-radius: 10px;
-        font-size: 14px;
-        border: 2px solid;
-        background-color: inherit;
-    }
+input {
+    color: white;
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 14px;
+    border: 2px solid;
+    background-color: inherit;
+}
 
-    input:focus {
-        border: 2px solid #caab79;
-        outline: none;
-    }
+input:focus {
+    border: 2px solid #caab79;
+    outline: none;
+}
 
-    button {
-        cursor: pointer;
-        font-size: 16px;
-        font-family: 'nunito';
-        background-color: #caab79;
-    }
+button {
+    cursor: pointer;
+    font-size: 16px;
+    font-family: 'nunito';
+    background-color: #caab79;
+}
 
-    textarea {
-        font-family: 'nunito';
-        padding: 10px;
-        resize: none;
-        outline: none;
-        border-radius: 5px;
-        height: 200px;
-    }
+textarea {
+    font-family: 'nunito';
+    padding: 10px;
+    resize: none;
+    outline: none;
+    border-radius: 5px;
+    height: 200px;
+}
+
+.opacityLow {
+    opacity: 0.7;
 }
 
 .createStyle {
@@ -103,12 +107,21 @@
     display: flex;
 }
 
+.z {
+    z-index: 1;
+}
+
 .updateForm, .deleteForm {
+    width: 40%;
+    z-index: 2;
     position: relative;
-    width: 80%;
-    height: 80vh;
     margin: auto;
+    margin-top: 50px;
     display: flex;
+    flex-direction: column;
+    background-color: rgb(30, 30, 30);
+    border-radius: 20px;
+    padding: 20px;
 }
 
 #modalOverlay {

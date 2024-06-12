@@ -26,6 +26,8 @@ $item = $retrieveItemStatement->fetch(PDO::FETCH_ASSOC);
 require_once(__DIR__ . '/isConnect.php');
 
 ?>
+    <?php require_once(__DIR__ . '/header.php'); ?>
+
 
 <!DOCTYPE html>
 <html>
@@ -48,13 +50,9 @@ require_once(__DIR__ . '/isConnect.php');
         <div id="update">
         <div id="updateContent">
             <div class="updateForm">
-    <div class="loginForm">
-        <a href="/index.php">
-    <span class="material-symbols-rounded" id="updateClose" >
-    close
-</span></a>
 <h1>Mettre à jour <?php echo($item['title']); ?></h1>
-<form action="items_post_update.php" method="POST"><div class="formSection">
+<form action="items_post_update.php" method="POST">
+    <div class="formSection">
 
 <div class="formSection">
 <label for="id" class="form-label">Identifiant de la recette</label>
@@ -80,10 +78,10 @@ require_once(__DIR__ . '/isConnect.php');
             <button type="submit" class="formBtn">Mettre à jour</button>
         </form>
 </div>
-<div class="modalDesign">
-            <img class="loginImg" src="https://i.ibb.co/X8hdpTc/Marika-Shatters-The-Ring.webp" alt="">
-            </div>
-</div>
+    </div>
+    <div id="divTest">
+        <div class="bannerOverlay z"></div>
+        <img src="https://i.ibb.co/SP9dgs5/8m1e66o7pyka1-1.webp" alt="elden_ring_banner" class="bannerTest opacityLow">
     </div>
     </body>
 </html>

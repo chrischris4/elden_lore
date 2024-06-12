@@ -18,7 +18,7 @@
   flex-direction: column;
   width: 100%;
 }
-.modalForm #loginClose, .modalForm #subClose, .modalForm #createClose, .modalForm #deleteClose, .modalForm #updateClose {
+.modalForm #loginClose, .modalForm #subClose, .modalForm #createClose {
   z-index: 5;
   cursor: pointer;
   position: absolute;
@@ -28,7 +28,8 @@
   padding: 10px;
   background-color: rgba(0, 0, 0, 0.7);
 }
-.modalForm input {
+
+input {
   color: white;
   padding: 5px;
   border-radius: 10px;
@@ -36,23 +37,30 @@
   border: 2px solid;
   background-color: inherit;
 }
-.modalForm input:focus {
+
+input:focus {
   border: 2px solid #caab79;
   outline: none;
 }
-.modalForm button {
+
+button {
   cursor: pointer;
   font-size: 16px;
   font-family: "nunito";
   background-color: #caab79;
 }
-.modalForm textarea {
+
+textarea {
   font-family: "nunito";
   padding: 10px;
   resize: none;
   outline: none;
   border-radius: 5px;
   height: 200px;
+}
+
+.opacityLow {
+  opacity: 0.7;
 }
 
 .createStyle {
@@ -94,12 +102,21 @@
   display: flex;
 }
 
+.z {
+  z-index: 1;
+}
+
 .updateForm, .deleteForm {
+  width: 40%;
+  z-index: 2;
   position: relative;
-  width: 80%;
-  height: 80vh;
   margin: auto;
+  margin-top: 50px;
   display: flex;
+  flex-direction: column;
+  background-color: rgb(30, 30, 30);
+  border-radius: 20px;
+  padding: 20px;
 }
 
 #modalOverlay {

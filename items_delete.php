@@ -13,6 +13,9 @@ if (!isset($getData['id']) || !is_numeric($getData['id'])) {
 
 ?>
 
+<?php require_once(__DIR__ . '/header.php'); ?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,26 +38,18 @@ if (!isset($getData['id']) || !is_numeric($getData['id'])) {
         <div id="delete">
             <div id="deleteContent">
         <div class="deleteForm">
-    <div class="loginForm">
-        <a href="/index.php">
-    <span class="material-symbols-rounded" id="deleteClose" >
-    close
-</span>
-</a>
         <h1>Supprimer un article</h1>
         <form action="items_post_delete.php" method="POST">
         <div>
-                <label for="id" class="form-label">Identifiant de la recette</label>
                 <input type="hidden" class="form-control" id="id" name="id" value="<?php echo $getData['id']; ?>">
             </div>
             <button type="submit" class="formBtn">Supprimer</button>
         </form>
 </div>
-<div class="modalDesign">
-            <img class="loginImg" src="https://i.ibb.co/X8hdpTc/Marika-Shatters-The-Ring.webp" alt="">
-            </div>
-</div>
     </div>
-
+    <div id="divTest">
+        <div class="bannerOverlay z"></div>
+        <img src="https://i.ibb.co/SP9dgs5/8m1e66o7pyka1-1.webp" alt="elden_ring_banner" class="bannerTest opacityLow">
+    </div>
     </body>
     </html>
