@@ -28,8 +28,6 @@ $items = getItems($items, $category);
     <!-- inclusion de l'entête du site -->
     <?php if (isset($_SESSION['LOGGED_USER'])) : ?>
         <?php require_once(__DIR__ . '/items_create.php'); ?>
-        <?php require_once(__DIR__ . '/items_delete.php'); ?>
-        <?php require_once(__DIR__ . '/items_update.php'); ?>
     <?php endif; ?>
     <?php require_once(__DIR__ . '/login.php'); ?>
     <?php require_once(__DIR__ . '/subscribe.php'); ?>
@@ -215,18 +213,15 @@ $items = getItems($items, $category);
             if (updateLinks && updateForm && updateClose) {
                 updateLinks.forEach(link => {
                     link.addEventListener('click', (e) => {
-                        // e.preventDefault(); // Retirer cette ligne pour permettre la redirection
                         document.body.classList.add('no-scroll');
-                        updateForm.classList.add('show');
-                        overlay.classList.add('showOverlay');
+                        updateForm.classList.add('flex');
                     });
                 });
 
                 updateClose.addEventListener('click', (e) => {
                     e.preventDefault();
                     document.body.classList.remove('no-scroll');
-                    updateForm.classList.remove('show');
-                    overlay.classList.remove('showOverlay');
+                    updateForm.classList.remove('flex');
                 });
             }
 
@@ -235,16 +230,14 @@ $items = getItems($items, $category);
                     link.addEventListener('click', (e) => {
                         // e.preventDefault(); // Retirer cette ligne pour permettre la redirection
                         document.body.classList.add('no-scroll');
-                        deleteForm.classList.add('show');
-                        overlay.classList.add('showOverlay');
+                        deleteForm.classList.add('flex');
                     });
                 });
 
                 deleteClose.addEventListener('click', (e) => {
                     e.preventDefault();
                     document.body.classList.remove('no-scroll');
-                    deleteForm.classList.remove('show');
-                    overlay.classList.remove('showOverlay');
+                    deleteForm.classList.remove('flex');
                 });
             }
             <?php endif; ?>

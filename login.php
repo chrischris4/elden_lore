@@ -36,6 +36,6 @@ close
 <?php else : ?>
     <!-- Si utilisateur/trice bien connectée on affiche un message de succès -->
     <div class="loginWelcome" role="alert">
-        <h2>Bonjour <?php echo $_SESSION['LOGGED_USER']['pseudo']; ?> et bienvenue sur le site !</h2>
+        <?php echo $_SESSION['LOGGED_USER']['pseudo']; ?>
     </div>
 <?php endif; ?>

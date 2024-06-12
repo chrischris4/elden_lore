@@ -32,8 +32,4 @@ close
     </div>
     </div>
 <?php else : ?>
-    <!-- Si utilisateur/trice bien connectée on affiche un message de succès -->
-    <div class="subWelcome" role="alert">
-        <h2>Bonjour <?php echo $_SESSION['LOGGED_USER']['pseudo']; ?>, bienvenue parmis les sans éclats !</h2>
-    </div>
 <?php endif; ?>

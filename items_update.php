@@ -1,23 +1,16 @@
 <?php
 session_start();
 
-
 require_once(__DIR__ . '/isConnect.php');
 require_once(__DIR__ . '/config/mysql.php');
 require_once(__DIR__ . '/config/databaseconnect.php');
 
-/**
- * On ne traite pas les super globales provenant de l'utilisateur directement,
- * ces données doivent être testées et vérifiées.
- */
 $getData = $_GET;
-
 
 if (!isset($getData['id']) || !is_numeric($getData['id'])) {
     echo('Il faut un identifiant de recette pour la modifier.');
     return;
 }
-
 
 $retrieveItemStatement = $mysqlClient->prepare('SELECT * FROM items WHERE items_id = :id');
 $retrieveItemStatement->execute([
@@ -34,14 +27,32 @@ require_once(__DIR__ . '/isConnect.php');
 
 ?>
 
-
-<div id="modalOverlay"></div>
-        <div id="modalUpdate">
-        <div class="modalForm createStyle">
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elden Lore</title>
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+    <link rel="stylesheet" href="styles/css/style.css">
+    <link rel="stylesheet" href="styles/css/header.css">
+    <link rel="stylesheet" href="styles/css/login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+        <div id="update">
+        <div id="updateContent">
+            <div class="updateForm">
     <div class="loginForm">
+        <a href="/index.php">
     <span class="material-symbols-rounded" id="updateClose" >
     close
-</span>
+</span></a>
 <h1>Mettre à jour <?php echo($item['title']); ?></h1>
 <form action="items_post_update.php" method="POST"><div class="formSection">
 
@@ -74,3 +85,5 @@ require_once(__DIR__ . '/isConnect.php');
             </div>
 </div>
     </div>
+    </body>
+</html>

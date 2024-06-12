@@ -16,7 +16,7 @@ if (!isset($getData['id']) || !is_numeric($getData['id'])) {
 }
 
 // On récupère la recette
-$retrieveItemWithCommentsStatement = $mysqlClient->prepare('SELECT r.*, c.comment_id, c.comment, c.user_id,  DATE_FORMAT(c.created_at, "%d/%m/%Y") as comment_date, u.full_name FROM items r 
+$retrieveItemWithCommentsStatement = $mysqlClient->prepare('SELECT r.*, c.comment_id, c.comment, c.user_id,  DATE_FORMAT(c.created_at, "%d/%m/%Y") as comment_date, u.pseudo FROM items r 
 LEFT JOIN comments c on c.items_id = r.items_id
 LEFT JOIN users u ON u.user_id = c.user_id
 WHERE r.items_id = :id 

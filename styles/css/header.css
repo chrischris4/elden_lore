@@ -29,6 +29,10 @@
   height: 40px;
 }
 
+.loggedLink {
+  margin-left: 50px;
+}
+
 #header.showTitle {
   z-index: 2;
   opacity: 0.9;

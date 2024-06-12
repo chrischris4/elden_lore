@@ -61,7 +61,7 @@
   width: 60%;
 }
 
-#modalLogin, #modalSub, #modalCreate, #modalDelete, #modalUpdate {
+#modalLogin, #modalSub, #modalCreate {
   transform: translateX(250%);
   transition: transform 0.4s ease-in-out;
   position: fixed;
@@ -70,13 +70,36 @@
   width: 100%;
   height: 100vh;
   z-index: 5;
-  display: flex;
   justify-content: center;
   align-items: center;
+  display: flex;
 }
 
-#modalLogin.show, #modalSub.show, #modalCreate.show, #modalDelete.show, #modalUpdate.show {
+#modalLogin.show, #modalSub.show, #modalCreate.show {
   transform: translateX(0%);
+}
+
+#delete, #update {
+  width: 100%;
+  z-index: 5;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+#updateContent, #deleteContent {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.updateForm, .deleteForm {
+  position: relative;
+  width: 80%;
+  height: 80vh;
+  margin: auto;
+  display: flex;
 }
 
 #modalOverlay {
@@ -124,24 +147,12 @@
   align-self: center;
 }
 
-.loginWelcome, .subWelcome {
+.loginWelcome {
   font-family: "nunito";
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-  position: absolute;
-  top: 300px;
-  width: 100%;
-}
-.loginWelcome h2, .subWelcome h2 {
-  font-size: 18px;
-  background-color: rgba(23, 23, 23, 0.5);
-  padding: 20px;
-  border-radius: 20px;
-  color: #caab79;
-  border: 2px solid #caab79;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 3;
 }
 
 .loginForm {

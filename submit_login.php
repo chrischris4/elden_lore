@@ -31,7 +31,7 @@ if (isset($postData['pseudo']) && isset($postData['password'])) {
                 'pseudo' => $user['pseudo'],
                 'user_id' => $user['user_id'],
             ];
-            header('Location: /index.php'); // Redirection vers la page d'accueil après connexion réussie
+            redirectToUrl('index.php');
             exit();
         } else {
             $_SESSION['LOGIN_ERROR_MESSAGE'] = 'Les informations envoyées ne permettent pas de vous identifier.';
@@ -48,4 +48,6 @@ if (isset($postData['pseudo']) && isset($postData['password'])) {
     header('Location: /index.php'); // Redirection vers la page de login
     exit();
 }
+
+
 ?>

@@ -12,8 +12,8 @@
                     </li>
                 <?php endif; ?>
                 <?php if (isset($_SESSION['LOGGED_USER'])) : ?>
-                    <li>
-                        <a href="#" id="createLink">AJOUTEZ UN ARTICLE !</a>
+                    <li class="loggedLink">
+                        <a href="#" id="createLink">AJOUTEZ UN ARTICLE</a>
                     </li>
                     <li>
                         <a href="logout.php">DECONNEXION</a>
