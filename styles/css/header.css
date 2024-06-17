@@ -18,15 +18,8 @@
   list-style: none;
 }
 #header li {
+  font-size: 14px;
   margin-right: 40px;
-}
-#header .ost {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-}
-#header #audioPlayer {
-  height: 40px;
 }
 
 .loggedLink {
@@ -37,7 +30,7 @@
   z-index: 2;
   opacity: 0.9;
   box-shadow: 0 0 0 0 black;
-  height: 180px;
+  height: 150px;
 }
 
 /*# sourceMappingURL=header.css.map */

@@ -1,5 +1,4 @@
 <div id="header">
-
     <nav>
         <div>
             <ul>
@@ -13,7 +12,7 @@
                 <?php endif; ?>
                 <?php if (isset($_SESSION['LOGGED_USER'])) : ?>
                     <li class="loggedLink">
-                        <a href="#" id="createLink">AJOUTEZ UN ARTICLE</a>
+                        <a href="items_create.php" id="createLink">AJOUTEZ UN ARTICLE</a>
                     </li>
                     <li>
                         <a href="logout.php">DECONNEXION</a>
@@ -22,10 +21,4 @@
             </ul>
         </div>
     </nav>
-    <div class="ost">
-        <audio id="audioPlayer" controls>
-            <source src="audio/eldenSong.mp3" type="audio/mpeg">
-            Votre navigateur ne prend pas en charge l'élément audio.
-        </audio>
-    </div>
 </div>

@@ -26,9 +26,6 @@ $items = getItems($items, $category);
 </head>
 <body>
     <!-- inclusion de l'entête du site -->
-    <?php if (isset($_SESSION['LOGGED_USER'])) : ?>
-        <?php require_once(__DIR__ . '/items_create.php'); ?>
-    <?php endif; ?>
     <?php require_once(__DIR__ . '/login.php'); ?>
     <?php require_once(__DIR__ . '/subscribe.php'); ?>
     <?php require_once(__DIR__ . '/header.php'); ?>
@@ -183,73 +180,15 @@ $items = getItems($items, $category);
             }
             <?php endif; ?>
 
-            <?php if (isset($_SESSION['LOGGED_USER'])) : ?>
-            const createLink = document.getElementById('createLink');
-            const createForm = document.getElementById('modalCreate');
-            const createClose = document.getElementById('createClose');
-            const updateLinks = document.querySelectorAll('.updateLink');
-            const updateForm = document.getElementById('modalUpdate');
-            const updateClose = document.getElementById('updateClose');
-            const deleteLinks = document.querySelectorAll('.deleteLink');
-            const deleteForm = document.getElementById('modalDelete');
-            const deleteClose = document.getElementById('deleteClose');
-
-            if (createLink && createForm && createClose) {
-                createLink.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    document.body.classList.add('no-scroll');
-                    createForm.classList.add('show');
-                    overlay.classList.add('showOverlay');
-                });
-
-                createClose.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    document.body.classList.remove('no-scroll');
-                    createForm.classList.remove('show');
-                    overlay.classList.remove('showOverlay');
-                });
-            }
-
-            if (updateLinks && updateForm && updateClose) {
-                updateLinks.forEach(link => {
-                    link.addEventListener('click', (e) => {
-                        document.body.classList.add('no-scroll');
-                        updateForm.classList.add('flex');
-                    });
-                });
-
-                updateClose.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    document.body.classList.remove('no-scroll');
-                    updateForm.classList.remove('flex');
-                });
-            }
-
-            if (deleteLinks && deleteForm && deleteClose) {
-                deleteLinks.forEach(link => {
-                    link.addEventListener('click', (e) => {
-                        // e.preventDefault(); // Retirer cette ligne pour permettre la redirection
-                        document.body.classList.add('no-scroll');
-                        deleteForm.classList.add('flex');
-                    });
-                });
-
-                deleteClose.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    document.body.classList.remove('no-scroll');
-                    deleteForm.classList.remove('flex');
-                });
-            }
-            <?php endif; ?>
 
             window.addEventListener('scroll', () => {
                 const scrollY = window.scrollY;
 
                 divTest.classList.toggle('scrolled', scrollY > 50);
-                searchInput.classList.toggle('showTitle', scrollY > 245);
+                searchInput.classList.toggle('showTitle', scrollY > 270);
                 headerTitle.classList.toggle('showTitle', scrollY > 150);
-                filter.classList.toggle('showTitle', scrollY > 377);
-                header.classList.toggle('showTitle', scrollY > 377);
+                filter.classList.toggle('showTitle', scrollY > 407);
+                header.classList.toggle('showTitle', scrollY > 407);
             });
         });
     </script>

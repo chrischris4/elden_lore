@@ -128,7 +128,7 @@
 #searchInput.showTitle {
   z-index: 2;
   position: fixed;
-  top: 100px;
+  top: 75px;
 }
 
 body {
@@ -167,14 +167,16 @@ a {
 }
 
 #filter {
+  font-size: 14px;
   z-index: 2;
   display: flex;
+  align-items: center;
   justify-content: center;
   width: 90%;
   position: absolute;
   bottom: 0;
   height: 50px;
-  padding-bottom: 20px;
+  padding-bottom: 15px;
   border-bottom: 2px solid rgba(202, 171, 121, 0);
   transition: border-bottom 0.4s ease-in-out;
 }
@@ -192,7 +194,7 @@ a {
 #filter.showTitle {
   z-index: 2;
   position: fixed;
-  top: 150px;
+  top: 125px;
   border-bottom: 2px solid #caab79;
 }
 

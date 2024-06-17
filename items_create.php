@@ -1,14 +1,38 @@
 <?php
+session_start();
+
 
 require_once(__DIR__ . '/isConnect.php');
+
+
 ?>
-        <div id="modalOverlay"></div>
-        <div id="modalCreate">
-        <div class="modalForm createStyle">
-    <div class="loginForm">
-    <span class="material-symbols-rounded" id="createClose" >
-    close
-</span>
+
+<?php require_once(__DIR__ . '/header.php'); ?>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elden Lore</title>
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+    <link rel="stylesheet" href="styles/css/style.css">
+    <link rel="stylesheet" href="styles/css/header.css">
+    <link rel="stylesheet" href="styles/css/login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+
+        
+<div id="create">
+        <div id="createContent">
+    <div class="createForm">
         <h1>Ajouter un article</h1>
         <form action="items_post_create.php" method="POST">
         <div class="formSection">
@@ -32,8 +56,9 @@ require_once(__DIR__ . '/isConnect.php');
             <button type="submit" class="formBtn">Valider</button>
         </form>
 </div>
-<div class="modalDesign">
-            <img class="loginImg" src="https://i.ibb.co/HhMSCNQ/er-radagon-trying-to-repair-the-ring.webp" alt="">
-            </div>
-</div>
+    <div id="divTest">
+        <div class="bannerOverlay z"></div>
+        <img src="https://i.ibb.co/SP9dgs5/8m1e66o7pyka1-1.webp" alt="elden_ring_banner" class="bannerTest opacityLow">
     </div>
+    </body>
+    </html>
