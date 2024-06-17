@@ -56,9 +56,27 @@ require_once(__DIR__ . '/isConnect.php');
             <button type="submit" class="formBtn">Valider</button>
         </form>
 </div>
+<div class="createPreview">
+    
+<article class="item preview">
+                <div class="articleBackground">
+                    <img src="https://i.ibb.co/JQWNDhW/dark-texture-watercolor-1.webp" alt="">
+                </div>
+                <h3>Title</h3>
+                <img src="https://i.ibb.co/SP9dgs5/8m1e66o7pyka1-1.webp" alt="elden_ring_banner" class="articleImg">
+                <div class="articleInfo">Description</div>
+                <div class="authorInfo">
+                    <h4>Author</h4>
+                </div>
+            </article>
+</div>
+</div>
     <div id="divTest">
         <div class="bannerOverlay z"></div>
         <img src="https://i.ibb.co/SP9dgs5/8m1e66o7pyka1-1.webp" alt="elden_ring_banner" class="bannerTest opacityLow">
     </div>
+</div>
+    <?php require_once(__DIR__ . '/footer.php'); ?>
+
     </body>
     </html>

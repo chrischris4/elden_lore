@@ -55,7 +55,6 @@ require_once(__DIR__ . '/isConnect.php');
     <div class="formSection">
 
 <div class="formSection">
-<label for="id" class="form-label">Identifiant de la recette</label>
 <input type="hidden" class="form-control" id="id" name="id" value="<?php echo($getData['id']); ?>">
             </div>
                 <label for="category" class="formLabel">Catégorie</label>
@@ -78,10 +77,28 @@ require_once(__DIR__ . '/isConnect.php');
             <button type="submit" class="formBtn">Mettre à jour</button>
         </form>
 </div>
+<div class="createPreview">
+    
+<article class="item preview">
+                <div class="articleBackground">
+                    <img src="https://i.ibb.co/JQWNDhW/dark-texture-watercolor-1.webp" alt="">
+                </div>
+                <h3><?php echo($item['title']); ?></h3>
+                <img src="https://i.ibb.co/SP9dgs5/8m1e66o7pyka1-1.webp" alt="elden_ring_banner" class="articleImg">
+                <div class="articleInfo"><?php echo($item['info_item']); ?></div>
+                <div class="authorInfo">
+                    <h4><?php echo($item['author']); ?></h4>
+                </div>
+            </article>
+</div>
     </div>
     <div id="divTest">
         <div class="bannerOverlay z"></div>
         <img src="https://i.ibb.co/SP9dgs5/8m1e66o7pyka1-1.webp" alt="elden_ring_banner" class="bannerTest opacityLow">
     </div>
+    </div>
+
+    <?php require_once(__DIR__ . '/footer.php'); ?>
+
     </body>
 </html>

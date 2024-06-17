@@ -88,6 +88,7 @@ textarea {
 
 
 #delete, #update, #create {
+    margin: 50px 0px;
     width: 100%;
     z-index: 5;
     justify-content: center;
@@ -96,10 +97,14 @@ textarea {
 }
 
 #updateContent, #deleteContent, #createContent {
-    width: 100%;
+    width: 90%;
     justify-content: center;
     align-items: center;
     display: flex;
+}
+
+.createPreview {
+    width: 45%;
 }
 
 .z {
@@ -107,7 +112,7 @@ textarea {
 }
 
 .updateForm, .deleteForm, .createForm {
-    width: 40%;
+    width: 45%;
     z-index: 2;
     position: relative;
     margin: auto;
@@ -115,7 +120,7 @@ textarea {
     display: flex;
     flex-direction: column;
     background-color: rgb(30, 30, 30);
-    border-radius: 20px;
+    border-radius: 10px;
     padding: 20px;
 }
 

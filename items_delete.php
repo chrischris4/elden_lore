@@ -3,6 +3,8 @@ session_start();
 
 
 require_once(__DIR__ . '/isConnect.php');
+require_once(__DIR__ . '/config/mysql.php');
+require_once(__DIR__ . '/config/databaseconnect.php');
 
 $getData = $_GET;
 
@@ -10,6 +12,11 @@ if (!isset($getData['id']) || !is_numeric($getData['id'])) {
     echo('Il faut un identifiant pour supprimer la recette.');
     return;
 }
+$retrieveItemStatement = $mysqlClient->prepare('SELECT * FROM items WHERE items_id = :id');
+$retrieveItemStatement->execute([
+    'id' => (int)$getData['id'],
+]);
+$item = $retrieveItemStatement->fetch(PDO::FETCH_ASSOC);
 
 ?>
 
@@ -39,10 +46,22 @@ if (!isset($getData['id']) || !is_numeric($getData['id'])) {
             <div id="deleteContent">
         <div class="deleteForm">
         <h1>Supprimer un article</h1>
+        <article class="item preview">
+                <div class="articleBackground">
+                    <img src="https://i.ibb.co/JQWNDhW/dark-texture-watercolor-1.webp" alt="">
+                </div>
+                <h3><?php echo($item['title']); ?></h3>
+                <img src="https://i.ibb.co/SP9dgs5/8m1e66o7pyka1-1.webp" alt="elden_ring_banner" class="articleImg">
+                <div class="articleInfo"><?php echo($item['info_item']); ?></div>
+                <div class="authorInfo">
+                    <h4><?php echo($item['author']); ?></h4>
+                </div>
+            </article>
         <form action="items_post_delete.php" method="POST">
         <div>
                 <input type="hidden" class="form-control" id="id" name="id" value="<?php echo $getData['id']; ?>">
             </div>
+            <p>La suppression est définitive *</p>
             <button type="submit" class="formBtn">Supprimer</button>
         </form>
 </div>
@@ -51,5 +70,9 @@ if (!isset($getData['id']) || !is_numeric($getData['id'])) {
         <div class="bannerOverlay z"></div>
         <img src="https://i.ibb.co/SP9dgs5/8m1e66o7pyka1-1.webp" alt="elden_ring_banner" class="bannerTest opacityLow">
     </div>
+    </div>
+
+    <?php require_once(__DIR__ . '/footer.php'); ?>
+
     </body>
     </html>

@@ -6,7 +6,6 @@ require_once(__DIR__ . '/config/mysql.php');
 require_once(__DIR__ . '/config/databaseconnect.php');
 require_once(__DIR__ . '/functions.php');
 
-
 /**
  * On ne traite pas les super globales provenant de l'utilisateur directement,
  * ces données doivent être testées et vérifiées.
