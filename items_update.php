@@ -84,7 +84,7 @@ require_once(__DIR__ . '/isConnect.php');
                     <img src="https://i.ibb.co/JQWNDhW/dark-texture-watercolor-1.webp" alt="">
                 </div>
                 <h3><?php echo($item['title']); ?></h3>
-                <img src="https://i.ibb.co/SP9dgs5/8m1e66o7pyka1-1.webp" alt="elden_ring_banner" class="articleImg">
+                <img src="<?php echo($item['picture']); ?>" alt="elden_ring_banner" class="articleImg">
                 <div class="articleInfo"><?php echo($item['info_item']); ?></div>
                 <div class="authorInfo">
                     <h4><?php echo($item['author']); ?></h4>

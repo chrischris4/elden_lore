@@ -15,6 +15,8 @@ if (!isset($getData['id']) || !is_numeric($getData['id'])) {
     return;
 }
 
+$getData = $_GET;
+
 // On récupère la recette
 $retrieveItemWithCommentsStatement = $mysqlClient->prepare('SELECT r.*, c.comment_id, c.comment, c.user_id,  DATE_FORMAT(c.created_at, "%d/%m/%Y") as comment_date, u.pseudo FROM items r 
 LEFT JOIN comments c on c.items_id = r.items_id
@@ -65,29 +67,35 @@ foreach ($itemWithComments as $comment) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elden Lore - <?php echo htmlspecialchars($item['title']); ?></title>
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-    >
-</head>
-<body class="d-flex flex-column min-vh-100">
-    <div class="container">
+    <link rel="stylesheet" href="styles/css/style.css">
+    <link rel="stylesheet" href="styles/css/header.css">
+    <link rel="stylesheet" href="styles/css/login.css">
 
+</head>
+<body>
+    <div id="read">
+        <div id="readContent">
         <?php require_once(__DIR__ . '/header.php'); ?>
-        <h1><?php echo htmlspecialchars($item['title']); ?></h1>
-        <div class="row">
-            <article class="col">
-                <?php echo htmlspecialchars($item['info_item']); ?>
+        <div class="itemContainer">
+        <article class="item preview">
+                <div class="articleBackground">
+                    <img src="https://i.ibb.co/JQWNDhW/dark-texture-watercolor-1.webp" alt="">
+                </div>
+                <h3><?php echo($item['title']); ?></h3>
+                <img src="https://i.ibb.co/SP9dgs5/8m1e66o7pyka1-1.webp" alt="elden_ring_banner" class="articleImg">
+                <div class="articleInfo"><?php echo($item['info_item']); ?></div>
+                <div class="authorInfo">
+                    <h4><?php echo($item['author']); ?></h4>
+                </div>
             </article>
-            <aside class="col">
-                <p><i>Contribuée par <?php echo htmlspecialchars($item['author']); ?></i></p>
+            </div>
+            <div class="commentsContainer">
+            <div class="comments">
                 <?php if ($item['rating'] !== null) : ?>
                     <p><b>Evaluée par la communauté à <?php echo htmlspecialchars($item['rating']); ?> / 5</b></p>
                 <?php else : ?>
                     <p><b>Aucune évaluation</b></p>
                 <?php endif; ?>
-            </aside>
-        </div>
         <hr />
         <h2>Commentaires</h2>
         <?php if ($item['comments'] !== []) : ?>
@@ -109,6 +117,13 @@ foreach ($itemWithComments as $comment) {
         <?php if (isset($_SESSION['LOGGED_USER'])) : ?>
             <?php require_once(__DIR__ . '/comments_create.php'); ?>
         <?php endif; ?>
+        </div>
+        </div>
+        </div>
+    </div>
+    <div id="divTest">
+        <div class="bannerOverlay z"></div>
+        <img src="https://i.ibb.co/SP9dgs5/8m1e66o7pyka1-1.webp" alt="elden_ring_banner" class="bannerTest opacityLow">
     </div>
     <?php require_once(__DIR__ . '/footer.php'); ?>
 </body>

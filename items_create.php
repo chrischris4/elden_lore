@@ -34,7 +34,7 @@ require_once(__DIR__ . '/isConnect.php');
         <div id="createContent">
     <div class="createForm">
         <h1>Ajouter un article</h1>
-        <form action="items_post_create.php" method="POST">
+        <form action="items_post_create.php" method="POST" enctype="multipart/form-data">
         <div class="formSection">
                 <label for="category" class="formLabel">Catégorie</label>
                 <select class="formSelect" id="category" name="category">
@@ -53,6 +53,10 @@ require_once(__DIR__ . '/isConnect.php');
                 <label for="info_item" class="formLabel">Description</label>
                 <textarea class="formControl" placeholder="Seulement du contenu vous appartenant ou libre de droits." id="info_item" name="info_item"></textarea>
             </div>
+            <div class="formSection">
+        <label for="picture" class="formLabel">Image</label>
+        <input type="file" class="formControl" id="picture" name="picture" accept="image/*">
+    </div>
             <button type="submit" class="formBtn">Valider</button>
         </form>
 </div>

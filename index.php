@@ -29,7 +29,7 @@ $items = getItems($items, $category);
     <?php require_once(__DIR__ . '/login.php'); ?>
     <?php require_once(__DIR__ . '/subscribe.php'); ?>
     <?php require_once(__DIR__ . '/header.php'); ?>
-
+    
     <div id="divTest">
         <div class="bannerOverlay"></div>
         <img src="https://i.ibb.co/SP9dgs5/8m1e66o7pyka1-1.webp" alt="elden_ring_banner" class="bannerTest">
@@ -66,7 +66,7 @@ $items = getItems($items, $category);
                     <img src="https://i.ibb.co/JQWNDhW/dark-texture-watercolor-1.webp" alt="">
                 </div>
                 <h3><a href="items_read.php?id=<?php echo($item['items_id']); ?>"><?php echo($item['title']); ?></a></h3>
-                <img src="https://i.ibb.co/SP9dgs5/8m1e66o7pyka1-1.webp" alt="elden_ring_banner" class="articleImg">
+                <img src="<?php echo($item['picture']); ?>" alt="elden_ring_banner" class="articleImg">
                 <div class="articleInfo"><?php echo $item['info_item']; ?></div>
                 <div class="authorInfo">
                     <div>
@@ -185,10 +185,10 @@ $items = getItems($items, $category);
                 const scrollY = window.scrollY;
 
                 divTest.classList.toggle('scrolled', scrollY > 50);
-                searchInput.classList.toggle('showTitle', scrollY > 270);
+                searchInput.classList.toggle('showTitle', scrollY > 325);
                 headerTitle.classList.toggle('showTitle', scrollY > 150);
-                filter.classList.toggle('showTitle', scrollY > 407);
-                header.classList.toggle('showTitle', scrollY > 407);
+                filter.classList.toggle('showTitle', scrollY > 465);
+                header.classList.toggle('showTitle', scrollY > 465);
             });
         });
     </script>

@@ -1,5 +1,6 @@
 #header {
   display: flex;
+  justify-content: flex-end;
   width: 100%;
   position: fixed;
   top: 0;
@@ -19,18 +20,39 @@
 }
 #header li {
   font-size: 14px;
-  margin-right: 40px;
 }
 
 .loggedLink {
-  margin-left: 50px;
+  margin-right: 90px;
 }
 
 #header.showTitle {
   z-index: 2;
   opacity: 0.9;
   box-shadow: 0 0 0 0 black;
-  height: 150px;
+  height: 95px;
+}
+
+#headerTitle {
+  margin: 0;
+  color: #caab79;
+  align-self: center;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 3;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+#headerTitle .titlePart {
+  font-size: 24px;
+}
+
+#headerTitle.showTitle {
+  opacity: 1;
 }
 
 /*# sourceMappingURL=header.css.map */

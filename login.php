@@ -36,6 +36,6 @@ close
 <?php else : ?>
     <!-- Si utilisateur/trice bien connectée on affiche un message de succès -->
     <div class="loginWelcome" role="alert">
-        <?php echo $_SESSION['LOGGED_USER']['pseudo']; ?>
+        <img src="<?php echo $_SESSION['LOGGED_USER']['picture']; ?>" alt="Photo de profil" class="profilePicture">
     </div>
 <?php endif; ?>

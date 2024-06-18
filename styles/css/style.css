@@ -50,27 +50,6 @@
   top: 220px;
 }
 
-#headerTitle {
-  margin: 0;
-  color: #caab79;
-  align-self: center;
-  display: flex;
-  align-items: center;
-  font-size: 20px;
-  position: fixed;
-  top: 20px;
-  z-index: 3;
-  opacity: 0;
-  transition: opacity 0.4s ease-in-out;
-}
-#headerTitle .titlePart {
-  font-size: 30px;
-}
-
-#headerTitle.showTitle {
-  opacity: 1;
-}
-
 #divTest {
   position: fixed;
   top: 50px;
@@ -107,7 +86,7 @@
   font-family: "Nunito", sans-serif;
   color: white;
   position: absolute;
-  width: 50%;
+  width: 40%;
   border-radius: 20px;
   border: 2px solid #caab79;
   transition: border 0.2s ease-in-out, z-index 0.4s ease-in-out;
@@ -128,7 +107,7 @@
 #searchInput.showTitle {
   z-index: 2;
   position: fixed;
-  top: 75px;
+  top: 20px;
 }
 
 body {
@@ -194,7 +173,7 @@ a {
 #filter.showTitle {
   z-index: 2;
   position: fixed;
-  top: 125px;
+  top: 70px;
   border-bottom: 2px solid #caab79;
 }
 
@@ -227,10 +206,12 @@ article {
 }
 article .articleImg {
   z-index: 2;
+  object-fit: cover;
   border: 4px solid black;
   border-radius: 2px;
   margin-top: 20px;
   width: 100%;
+  height: 230px;
 }
 article .articleBackground {
   position: absolute;
@@ -277,7 +258,7 @@ article h4 {
 
 .preview {
   z-index: 1;
-  width: 100%;
+  width: 90%;
   margin-bottom: 0;
 }
 
@@ -286,6 +267,7 @@ article h4 {
 }
 
 footer {
+  z-index: 2;
   width: 100%;
   display: flex;
   justify-content: center;

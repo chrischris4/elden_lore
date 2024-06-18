@@ -1,48 +1,4 @@
 <?php
-$users = [
-    [
-        'full_name' => 'Mickaël Andrieu',
-        'email' => 'mickael.andrieu@exemple.com',
-        'age' => 34,
-    ],
-    [
-        'full_name' => 'Mathieu Nebra',
-        'email' => 'mathieu.nebra@exemple.com',
-        'age' => 34,
-    ],
-    [
-        'full_name' => 'Laurène Castor',
-        'email' => 'laurene.castor@exemple.com',
-        'age' => 28,
-    ],
-];
-
-$recipes = [
-    [
-        'title' => 'Cassoulet',
-        'recipe' => 'Etape 1 : des flageolets !',
-        'author' => 'mickael.andrieu@exemple.com',
-        'is_enabled' => true,
-    ],
-    [
-        'title' => 'Couscous',
-        'recipe' => 'Etape 1 : de la semoule',
-        'author' => 'mickael.andrieu@exemple.com',
-        'is_enabled' => false,
-    ],
-    [
-        'title' => 'Escalope milanaise',
-        'recipe' => 'Etape 1 : prenez une belle escalope',
-        'author' => 'mathieu.nebra@exemple.com',
-        'is_enabled' => true,
-    ],
-    [
-        'title' => 'Salade Romaine',
-        'recipe' => 'Etape 1 : prenez une belle salade',
-        'author' => 'lorene.castor@exemple.com',
-        'is_enabled' => true,
-    ],
-];
 
 function displayAuthor(string $authorEmail, array $users): string
     {
@@ -53,19 +9,19 @@ function displayAuthor(string $authorEmail, array $users): string
         }
         return 'Auteur inconnu';
     }
-function isValidRecipe(array $recipe): bool
+function isValidItem(array $item): bool
     {
-        return $recipe['is_enabled'];
+        return $item['is_enabled'];
     }
-function getRecipes(array $recipes) : array
+function getItems(array $items) : array
     {
-        $valid_recipes = [];
-        foreach($recipes as $recipe) {
-            if (isValidRecipe($recipe)) {
-                $valid_recipes[] = $recipe;
+        $valid_items = [];
+        foreach($items as $item) {
+            if (isValidItem($item)) {
+                $valid_items[] = $item;
             }
         }
-    return $valid_recipes;
+    return $valid_items;
 }
 ?>
 
@@ -82,11 +38,11 @@ rel="stylesheet"
 <body>
     <div class="container">
         <h1>Liste des recettes de cuisine</h1>
-        <?php foreach(getRecipes($recipes) as $recipe) : ?>
+        <?php foreach(getItems($items) as $item) : ?>
         <article>
-            <h3><?php echo($recipe['title']); ?></h3>
-            <div><?php echo($recipe['recipe']); ?></div>
-            <i><?php echo(displayAuthor($recipe['author'], $users)); ?></i>
+            <h3><?php echo($item['title']); ?></h3>
+            <div><?php echo($item['item']); ?></div>
+            <i><?php echo(displayAuthor($item['author'], $users)); ?></i>
         </article>
         <?php endforeach ?>
     </div>
