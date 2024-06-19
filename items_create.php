@@ -31,9 +31,10 @@ require_once(__DIR__ . '/isConnect.php');
 
         
 <div id="create">
+<h1>Ajouter un article</h1>
+
         <div id="createContent">
     <div class="createForm">
-        <h1>Ajouter un article</h1>
         <form action="items_post_create.php" method="POST" enctype="multipart/form-data">
         <div class="formSection">
                 <label for="category" class="formLabel">Catégorie</label>
@@ -60,7 +61,8 @@ require_once(__DIR__ . '/isConnect.php');
             <button type="submit" class="formBtn">Valider</button>
         </form>
 </div>
-<div class="createPreview">
+<div class="itemPreview">
+    <h2>Prévisualisation</h2>
     
 <article class="item preview">
                 <div class="articleBackground">

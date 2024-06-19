@@ -63,7 +63,7 @@ textarea {
   opacity: 0.7;
 }
 
-#modalLogin, #modalSub, #modalCreate {
+#modalLogin, #modalSub {
   transform: translateX(250%);
   transition: transform 0.4s ease-in-out;
   position: fixed;
@@ -77,51 +77,74 @@ textarea {
   display: flex;
 }
 
-#modalLogin.show, #modalSub.show, #modalCreate.show {
+#modalLogin.show, #modalSub.show {
   transform: translateX(0%);
 }
 
 #delete, #update, #create, #read {
-  margin: 90px 0px;
+  z-index: 2;
+  margin: 100px 0px;
   width: 100%;
   z-index: 5;
   justify-content: center;
   align-items: center;
   display: flex;
+  flex-direction: column;
+}
+#delete h1, #update h1, #create h1, #read h1 {
+  z-index: 2;
+  align-self: flex-start;
+  margin-left: 5%;
 }
 
 #updateContent, #deleteContent, #createContent, #readContent {
+  z-index: 2;
+  border-radius: 20px;
   width: 90%;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   display: flex;
+  background-color: rgba(53, 53, 53, 0.8);
+  position: relative;
+}
+
+#deleteContent form {
+  width: 50%;
 }
 
 .itemContainer, .commentsContainer {
   width: 50%;
 }
 
-.createPreview {
-  width: 45%;
+.itemPreview {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.itemPreview h2 {
+  position: absolute;
+  top: 40px;
+  font-size: 18px;
 }
 
 .z {
   z-index: 1;
 }
 
-.updateForm, .deleteForm, .createForm {
-  width: 45%;
+.updateForm, .createForm {
+  width: 50%;
   z-index: 2;
-  position: relative;
-  margin: auto;
-  margin-top: 50px;
+  margin: 40px 0px;
   display: flex;
   flex-direction: column;
-  background-color: rgb(30, 30, 30);
-  border-radius: 10px;
-  padding: 20px;
+  padding: 0px 20px;
+  border-right: 2px solid;
 }
-
+.updateForm label, .createForm label {
+  font-size: 24px;
+}
 .comments {
   width: 90%;
 }

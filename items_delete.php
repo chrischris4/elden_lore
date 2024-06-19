@@ -43,20 +43,21 @@ $item = $retrieveItemStatement->fetch(PDO::FETCH_ASSOC);
 <body>
 
         <div id="delete">
-            <div id="deleteContent">
-        <div class="deleteForm">
         <h1>Supprimer un article</h1>
+            <div id="deleteContent">
+        <div class="itemPreview">
         <article class="item preview">
                 <div class="articleBackground">
                     <img src="https://i.ibb.co/JQWNDhW/dark-texture-watercolor-1.webp" alt="">
                 </div>
                 <h3><?php echo($item['title']); ?></h3>
-                <img src="https://i.ibb.co/SP9dgs5/8m1e66o7pyka1-1.webp" alt="elden_ring_banner" class="articleImg">
+                <img src="<?php echo($item['picture']); ?>" alt="elden_ring_banner" class="articleImg">
                 <div class="articleInfo"><?php echo($item['info_item']); ?></div>
                 <div class="authorInfo">
                     <h4><?php echo($item['author']); ?></h4>
                 </div>
             </article>
+</div>
         <form action="items_post_delete.php" method="POST">
         <div>
                 <input type="hidden" class="form-control" id="id" name="id" value="<?php echo $getData['id']; ?>">
@@ -65,7 +66,6 @@ $item = $retrieveItemStatement->fetch(PDO::FETCH_ASSOC);
             <button type="submit" class="formBtn">Supprimer</button>
         </form>
 </div>
-    </div>
     <div id="divTest">
         <div class="bannerOverlay z"></div>
         <img src="https://i.ibb.co/SP9dgs5/8m1e66o7pyka1-1.webp" alt="elden_ring_banner" class="bannerTest opacityLow">

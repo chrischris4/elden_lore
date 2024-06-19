@@ -48,9 +48,9 @@ require_once(__DIR__ . '/isConnect.php');
 </head>
 <body>
         <div id="update">
+        <h1>Mettre à jour <?php echo($item['title']); ?></h1>
         <div id="updateContent">
             <div class="updateForm">
-<h1>Mettre à jour <?php echo($item['title']); ?></h1>
 <form action="items_post_update.php" method="POST">
     <div class="formSection">
 
