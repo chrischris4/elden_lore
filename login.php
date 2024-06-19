@@ -37,5 +37,8 @@ close
     <!-- Si utilisateur/trice bien connectée on affiche un message de succès -->
     <div class="loginWelcome" role="alert">
         <img src="<?php echo $_SESSION['LOGGED_USER']['picture']; ?>" alt="Photo de profil" class="profilePicture">
+        <li class="loggedLink">
+                    <a href="logout.php">DECONNEXION</a>
+                    </li>
     </div>
 <?php endif; ?>

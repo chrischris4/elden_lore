@@ -47,6 +47,14 @@ require_once(__DIR__ . '/isConnect.php');
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
+<h2 id="headerTitle" class="opacity">
+        <span class="titlePart">E</span>
+        <span class="title">LDEN LOR</span>
+        <span class="titlePart">E</span>
+    </h2>
+    <div class="loginWelcome" role="alert">
+        <img src="<?php echo $_SESSION['LOGGED_USER']['picture']; ?>" alt="Photo de profil" class="profilePicture">
+    </div>
         <div id="update">
         <h1>Mettre à jour <?php echo($item['title']); ?></h1>
         <div id="updateContent">

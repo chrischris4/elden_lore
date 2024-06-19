@@ -41,7 +41,14 @@ $item = $retrieveItemStatement->fetch(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
-
+<h2 id="headerTitle" class="opacity">
+        <span class="titlePart">E</span>
+        <span class="title">LDEN LOR</span>
+        <span class="titlePart">E</span>
+    </h2>
+    <div class="loginWelcome" role="alert">
+        <img src="<?php echo $_SESSION['LOGGED_USER']['picture']; ?>" alt="Photo de profil" class="profilePicture">
+    </div>
         <div id="delete">
         <h1>Supprimer un article</h1>
             <div id="deleteContent">
@@ -59,10 +66,11 @@ $item = $retrieveItemStatement->fetch(PDO::FETCH_ASSOC);
             </article>
 </div>
         <form action="items_post_delete.php" method="POST">
+            <h2>Supprimer <?php echo($item['title']); ?> ?</h2>
         <div>
                 <input type="hidden" class="form-control" id="id" name="id" value="<?php echo $getData['id']; ?>">
             </div>
-            <p>La suppression est définitive *</p>
+            <p>( La suppression est définitive )</p>
             <button type="submit" class="formBtn">Supprimer</button>
         </form>
 </div>

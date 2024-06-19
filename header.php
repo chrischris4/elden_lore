@@ -2,20 +2,33 @@
     <nav>
             <ul>
                 <?php if (!isset($_SESSION['LOGGED_USER'])) : ?>
-                    <li>
+                    <li class="loginLink">
                         <a href="#" id="loginLink">CONNEXION</a>
                     </li>
-                    <li>
+                    <li class="subLink">
                         <a href="#" id="subLink">CREE UN COMPTE</a>
                     </li>
                 <?php endif; ?>
                 <?php if (isset($_SESSION['LOGGED_USER'])) : ?>
-                    <li class="loggedLink">
+                    <?php 
+                // Obtenir l'URL actuelle
+                $current_url = $_SERVER['REQUEST_URI']; 
+                // Vérifier si l'URL contient "index"
+                if (strpos($current_url, 'index') !== false) : 
+                ?>
+                    <li class="createLink">
                         <a href="items_create.php" id="createLink">AJOUTEZ UN ARTICLE</a>
                     </li>
-                    <!-- <li>
-                        <a href="logout.php">DECONNEXION</a>
-                    </li> -->
+                    <?php endif; ?>
+                    <?php 
+                // Vérifier si l'URL ne contient pas "index"
+                if (strpos($current_url, 'index') === false) : 
+                ?>
+                    <li class="goBackLink">
+                        <a href="index.php">RETOUR</a>
+                    </li>
+                <?php endif; ?>
+                    
                 <?php endif; ?>
             </ul>
     </nav>
