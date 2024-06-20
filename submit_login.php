@@ -30,6 +30,8 @@ if (isset($postData['pseudo']) && isset($postData['password'])) {
             $_SESSION['LOGGED_USER'] = [
                 'pseudo' => $user['pseudo'],
                 'user_id' => $user['user_id'],
+                'picture' => $user['picture'], // Ajout de la photo dans la session
+
             ];
             redirectToUrl('index.php');
             exit();

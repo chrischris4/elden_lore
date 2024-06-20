@@ -310,7 +310,7 @@ footer {
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-bottom: 50px;
+  padding-bottom: 50px;
 }
 footer h2 {
   font-family: "nunito";

@@ -70,9 +70,7 @@ require_once(__DIR__ . '/isConnect.php');
             <button type="submit" class="formBtn">Valider</button>
         </form>
 </div>
-<div class="itemPreview">
-    <h2>Prévisualisation</h2>
-    
+<div class="itemPreview">    
 <article class="item preview">
                 <div class="articleBackground">
                     <img src="https://i.ibb.co/JQWNDhW/dark-texture-watercolor-1.webp" alt="">

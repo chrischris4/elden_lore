@@ -26,8 +26,9 @@
 }
 
 .loggedLink {
+  position: absolute;
+  left: 80px;
   color: black;
-  margin-left: 30px;
 }
 
 .loggedLink:hover {

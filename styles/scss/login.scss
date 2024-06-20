@@ -58,9 +58,10 @@ textarea {
     font-family: 'nunito';
     padding: 10px;
     resize: none;
+    resize: vertical;
     outline: none;
     border-radius: 5px;
-    height: 200px;
+    height: 50px;
 }
 
 .opacityLow {
@@ -115,6 +116,10 @@ textarea {
     position: relative;
 }
 
+.deleteContent, .readContent {
+    padding: 40px 0px;
+}
+
 #deleteContent {
     form {
         width: 50%;
@@ -145,12 +150,6 @@ textarea {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
-    h2 {
-        position: absolute;
-        top: 40px;
-        font-size: 18px;
-    }
 }
 
 .z {
@@ -175,8 +174,17 @@ textarea {
     }
 }
 
+
+
 .comments {
     width: 90%;
+}
+
+.commentsForm {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 20px;
 }
 
 #modalOverlay {
@@ -252,6 +260,7 @@ textarea {
 }
 
 .profilePicture {
+    object-fit: cover;
     cursor: pointer;
     height: 45px;
     width: 45px;

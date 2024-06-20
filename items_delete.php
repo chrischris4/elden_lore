@@ -51,7 +51,7 @@ $item = $retrieveItemStatement->fetch(PDO::FETCH_ASSOC);
     </div>
         <div id="delete">
         <h1>Supprimer un article</h1>
-            <div id="deleteContent">
+            <div id="deleteContent" class="deleteContent">
         <div class="itemPreview">
         <article class="item preview">
                 <div class="articleBackground">
