@@ -48,27 +48,27 @@ $items = getItems($items, $category);
         <h2>c'est ici que les sans éclats partagent leurs connaissances concernant l'entre terre</h2>
         <div id="searchInput">
             <div class="searchFilter">
-        <input type="text" class="bannerInput"  placeholder="Rechercher.."> 
-        <div class="moreFilter">
-            <span class="material-symbols-rounded">
-                sort
-            </span>
-        </div>
-</div>
+                <input type="text" class="bannerInput"  placeholder="Rechercher.."> 
+                    <div class="moreFilter">
+                        <span class="material-symbols-rounded">
+                            sort
+                        </span>
+                    </div>
+            </div>
+            <div id="filter">
+                        <ul>
+                            <li data-category="all">TOUT</li>
+                            <li data-category="arme">ARMES</li>
+                            <li data-category="boss">BOSS</li>
+                            <li data-category="objet">OBJETS</li>
+                            <li data-category="personnage">PERSONNAGES</li>
+                            <li data-category="pnj">PNJ</li>
+                        </ul>
+                    </div>
         <!-- <div class="searchBtns">
             <button class="searchBtn">Articles</button>
             <button class="searchBtn">Lore</button>
         </div> -->
-</div>
-<div id="filter">
-            <ul>
-                <li data-category="all">TOUT</li>
-                <li data-category="arme">ARMES</li>
-                <li data-category="boss">BOSS</li>
-                <li data-category="objet">OBJETS</li>
-                <li data-category="personnage">PERSONNAGES</li>
-                <li data-category="pnj">PNJ</li>
-</ul>
         </div>
 </div>
     </div>
@@ -123,7 +123,6 @@ Marika est donc la nouvelle Déesse et gagne le titre d’Empyréenne, une disti
             const filterLinks = document.querySelectorAll('#filter ul li');
             const items = document.querySelectorAll('#allItems .item');
             const searchInput = document.getElementById('searchInput');
-            const filter = document.getElementById('filter');
             const divTest = document.getElementById('divTest');
             const headerTitle = document.getElementById('headerTitle');
             const header = document.getElementById('header');
@@ -211,11 +210,9 @@ Marika est donc la nouvelle Déesse et gagne le titre d’Empyréenne, une disti
 
             window.addEventListener('scroll', () => {
                 const scrollY = window.scrollY;
-
                 divTest.classList.toggle('scrolled', scrollY > 50);
                 searchInput.classList.toggle('showTitle', scrollY > 325);
                 headerTitle.classList.toggle('showTitle', scrollY > 150);
-                filter.classList.toggle('showTitle', scrollY > 465);
                 header.classList.toggle('showTitle', scrollY > 465);
             });
         });

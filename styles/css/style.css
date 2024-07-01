@@ -148,28 +148,18 @@
   z-index: 10;
   display: flex;
   align-items: center;
-  justify-content: center;
   width: 100%;
-  position: absolute;
-  bottom: 0;
   height: 50px;
   padding-bottom: 15px;
   border-bottom: 2px solid rgba(202, 171, 121, 0);
   transition: border-bottom 0.4s ease-in-out;
 }
 #filter ul {
-  width: 40%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   list-style: none;
   padding: 0;
-}
-
-#filter.showTitle {
-  z-index: 2;
-  position: fixed;
-  top: 70px;
-  border-bottom: 2px solid #caab79;
 }
 
 body {
