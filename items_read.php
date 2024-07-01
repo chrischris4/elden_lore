@@ -70,24 +70,15 @@ foreach ($itemWithComments as $comment) {
     <link rel="stylesheet" href="styles/css/style.css">
     <link rel="stylesheet" href="styles/css/header.css">
     <link rel="stylesheet" href="styles/css/login.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
 
 </head>
 <body>
+<?php require_once(__DIR__ . '/login.php'); ?>
+<?php require_once(__DIR__ . '/subscribe.php'); ?>
 <?php require_once(__DIR__ . '/header.php'); ?>
 
-<h2 id="headerTitle" class="opacity">
-        <span class="titlePart">E</span>
-        <span class="title">LDEN LOR</span>
-        <span class="titlePart">E</span>
-    </h2>
-    <?php if (isset($_SESSION['LOGGED_USER'])) : ?>
-    <div class="loginWelcome" role="alert">
-        <img src="<?php echo $_SESSION['LOGGED_USER']['picture']; ?>" alt="Photo de profil" class="profilePicture">
-        <li class="loggedLink">
-                    <a href="logout.php">DECONNEXION</a>
-                    </li>
-    </div>
-    <?php endif; ?>
     <div id="read">
     <h1><?php echo($item['title']); ?></h1>
         <div id="readContent" class="readContent">
@@ -141,5 +132,55 @@ foreach ($itemWithComments as $comment) {
         <img src="https://i.ibb.co/SP9dgs5/8m1e66o7pyka1-1.webp" alt="elden_ring_banner" class="bannerTest opacityLow">
     </div>
     <?php require_once(__DIR__ . '/footer.php'); ?>
+
+    
+    <?php if (!isset($_SESSION['LOGGED_USER'])) : ?>
+
+        <script>
+                        const overlay = document.getElementById('modalOverlay');
+            const loginLink = document.getElementById('loginLink');
+            const loginForm = document.getElementById('modalLogin');
+            const subLink = document.getElementById('subLink');
+            const subForm = document.getElementById('modalSub');
+            const subClose = document.getElementById('subClose');
+            const loginClose = document.getElementById('loginClose');
+
+////////////////////////////LOGIN SUB SCROLL/////////////////////////////////////////
+
+            if (loginLink && loginForm) {
+                loginLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    document.body.classList.add('no-scroll');
+                    loginForm.classList.add('show');
+                    overlay.classList.add('showOverlay');
+                });
+            }
+
+            if (subLink && subForm && subClose) {
+                subLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    document.body.classList.add('no-scroll');
+                    subForm.classList.add('show');
+                    overlay.classList.add('showOverlay');
+                });
+
+                subClose.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    document.body.classList.remove('no-scroll');
+                    subForm.classList.remove('show');
+                    overlay.classList.remove('showOverlay');
+                });
+            }
+
+            if (loginClose) {
+                loginClose.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    document.body.classList.remove('no-scroll');
+                    loginForm.classList.remove('show');
+                    overlay.classList.remove('showOverlay');
+                });
+            }
+            <?php endif; ?>
+            </script>
 </body>
 </html>

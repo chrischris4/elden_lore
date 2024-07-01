@@ -34,11 +34,6 @@ $items = getItems($items, $category);
         <div class="bannerOverlay"></div>
         <img src="https://i.ibb.co/SP9dgs5/8m1e66o7pyka1-1.webp" alt="elden_ring_banner" class="bannerTest">
     </div>
-    <h2 id="headerTitle">
-        <span class="titlePart">E</span>
-        <span class="title">LDEN LOR</span>
-        <span class="titlePart">E</span>
-    </h2>
     <div class="bannerContent">
         <h1>
             <span class="titlePart">E</span>
@@ -49,7 +44,7 @@ $items = getItems($items, $category);
         <div id="searchInput">
             <div class="searchFilter">
                 <input type="text" class="bannerInput"  placeholder="Rechercher.."> 
-                    <div class="moreFilter">
+                    <div id="moreFilter">
                         <span class="material-symbols-rounded">
                             sort
                         </span>
@@ -76,11 +71,12 @@ $items = getItems($items, $category);
     <h2 class="loreTitle">Articles</h2>
     <div class="allArticles">
         <?php foreach ($items as $item) : ?>
+            <a href="items_read.php?id=<?php echo($item['items_id']); ?>">
             <article class="item" data-category="<?php echo strtolower($item['category']); ?>">
                 <div class="articleBackground">
                     <img src="https://i.ibb.co/JQWNDhW/dark-texture-watercolor-1.webp" alt="">
                 </div>
-                <h3><a href="items_read.php?id=<?php echo($item['items_id']); ?>"><?php echo($item['title']); ?></a></h3>
+                <h3><?php echo($item['title']); ?></h3>
                 <img src="<?php echo($item['picture']); ?>" alt="elden_ring_banner" class="articleImg">
                 <div class="articleInfo"><?php echo $item['info_item']; ?></div>
                 <div class="authorInfo">
@@ -97,6 +93,7 @@ $items = getItems($items, $category);
                     <h4><?php echo displayAuthor($item['author'], $users); ?></h4>
                 </div>
             </article>
+            </a>
         <?php endforeach ?>
         </div>
         <div class="lore">
@@ -126,6 +123,16 @@ Marika est donc la nouvelle Déesse et gagne le titre d’Empyréenne, une disti
             const divTest = document.getElementById('divTest');
             const headerTitle = document.getElementById('headerTitle');
             const header = document.getElementById('header');
+            const moreFilter = document.getElementById('moreFilter');
+            const filter = document.getElementById('filter');
+
+
+                moreFilter.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    filter.classList.add('showFilter');
+                });
+
+//////////////////////////////FILTERS////////////////////////////////////////////
 
             filterLinks.forEach(link => {
                 link.addEventListener('click', (e) => {
@@ -172,6 +179,8 @@ Marika est donc la nouvelle Déesse et gagne le titre d’Empyréenne, une disti
             const subClose = document.getElementById('subClose');
             const loginClose = document.getElementById('loginClose');
 
+////////////////////////////LOGIN SUB SCROLL/////////////////////////////////////////
+
             if (loginLink && loginForm) {
                 loginLink.addEventListener('click', (e) => {
                     e.preventDefault();
@@ -207,13 +216,14 @@ Marika est donc la nouvelle Déesse et gagne le titre d’Empyréenne, une disti
             }
             <?php endif; ?>
 
+//////////////////////////////FIX WHEN SCROLL/////////////////////////////////////
 
             window.addEventListener('scroll', () => {
                 const scrollY = window.scrollY;
                 divTest.classList.toggle('scrolled', scrollY > 50);
-                searchInput.classList.toggle('showTitle', scrollY > 325);
+                searchInput.classList.toggle('showTitle', scrollY > 365);
                 headerTitle.classList.toggle('showTitle', scrollY > 150);
-                header.classList.toggle('showTitle', scrollY > 465);
+                header.classList.toggle('showTitle', scrollY > 365);
             });
         });
     </script>

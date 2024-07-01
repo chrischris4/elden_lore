@@ -1,21 +1,32 @@
 <div id="header">
-    <nav>
-            <ul>
+<?php $current_url = $_SERVER['REQUEST_URI']; 
+ if (strpos($current_url, 'index') === false) : ?>
+                        <a class="goBackLink" href="index.php">RETOUR</a>
+                <?php endif; ?>
+<h2 id="headerTitle">
+        <span class="titlePart">E</span>
+        <span class="title">LDEN LOR</span>
+        <span class="titlePart">E</span>
+    </h2>
                 <?php if (!isset($_SESSION['LOGGED_USER'])) : ?>
-                    <?php 
-                // Obtenir l'URL actuelle
-                $current_url = $_SERVER['REQUEST_URI']; 
-                // Vérifier si l'URL contient "index"
-                if (strpos($current_url, 'index') !== false) : 
-                ?>
+                <div class="userSettings" >
+                <span class="material-symbols-rounded userIcon">
+person
+</span>
+                <ul>
+                <?php if (isset($_SESSION['LOGGED_USER'])) : ?>
+                    <li class="loginLink">
+                    <a href="logout.php">DECONNEXION</a>
+                    </li>
+                    <?php endif; ?>
                     <li class="loginLink">
                         <a href="#" id="loginLink">CONNEXION</a>
                     </li>
                     <li class="subLink">
                         <a href="#" id="subLink">CREE UN COMPTE</a>
                     </li>
-                    <?php endif; ?>
-
+                </ul>
+    </div>
                 <?php endif; ?>
 
                 <?php if (isset($_SESSION['LOGGED_USER'])) : ?>
@@ -30,12 +41,4 @@
                     </li>
                     <?php endif; ?>
                 <?php endif; ?>
-                <?php                 $current_url = $_SERVER['REQUEST_URI']; 
- if (strpos($current_url, 'index') === false) : ?>
-                    <li class="goBackLink">
-                        <a href="index.php">RETOUR</a>
-                    </li>
-                <?php endif; ?>
-            </ul>
-    </nav>
 </div>
