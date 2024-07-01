@@ -91,24 +91,16 @@
 
 
 .bannerInput {
-    z-index: 10;
+    width: 100%;
     padding: 7px 10px 5px ;
     font-size: 16px;
-    font-family: "Nunito", sans-serif;
-    color: white;
-    position: absolute;
-    width: 40%;
     border-radius: 20px;
     border: 2px solid #caab79;
-    transition: border 0.2s ease-in-out;
     background-color: rgba(0, 0, 0, 0.3);
-    bottom: 220px;
-    height: 20px;
 }
 
 
 .bannerInput:focus {
-    border: 2px solid #caab79;
     outline: none;
 }
 
@@ -116,10 +108,86 @@
     color: rgb(184, 184, 184); /* Rouge pour les navigateurs modernes */
 }
 
+#searchInput {
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+    font-family: "Nunito", sans-serif;
+    color: white;
+    position: absolute;
+    width: 40%;
+    height: 35px;
+    bottom: 220px;
+}
+
 #searchInput.showTitle {
     position: fixed;
     top: 20px;
 }
+
+.searchFilter {
+    display: flex;
+}
+
+.moreFilter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    width: 37px;
+    border: 2px solid #caab79;
+    border-radius: 50%;
+}
+
+.searchBtns {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.searchBtn {
+    font-size: 22px;
+    font-family: 'agmenaBook';
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    border-radius: 20px;
+    width: 47.5%;
+    border: 2px solid #caab79;
+}
+
+
+#filter {
+    font-size: 14px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    height: 50px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #caab7900;
+    transition: border-bottom 0.4s ease-in-out;
+
+
+ul{
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+}
+}
+
+#filter.showTitle {
+    z-index: 2;
+    position: fixed;
+    top: 70px;
+    border-bottom: 2px solid #caab79;
+}
+
+
 
 //////////////////////////////////////////////////////////////////////
 
@@ -167,36 +235,6 @@ a:hover{
     color: inherit;
 }
 
-#filter {
-    font-size: 14px;
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 90%;
-    position: absolute;
-    bottom: 0;
-    height: 50px;
-    padding-bottom: 15px;
-    border-bottom: 2px solid #caab7900;
-    transition: border-bottom 0.4s ease-in-out;
-
-
-ul{
-    width: 95%;
-    display: flex;
-    justify-content: space-between;
-    list-style: none;
-    padding: 0;
-}
-}
-
-#filter.showTitle {
-    z-index: 2;
-    position: fixed;
-    top: 70px;
-    border-bottom: 2px solid #caab79;
-}
 
 #headerTitle.opacity {
     opacity: 1;
@@ -204,15 +242,21 @@ ul{
 
 /////////////////////////////////////////////////ARTICLE//////////////////////////////////////////
 
-#allItems {z-index: 0;
+#allItems {
+    z-index: 0;
     position: relative;
     margin: auto;
     width: 90%;
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    flex-direction: column;
     margin-top: 40px;
     margin-bottom: 100px;
+}
+
+.allArticles {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 
@@ -306,18 +350,19 @@ article {
     opacity: 1;
 }
 
+
+.loreTitle {
+    font-size: 28px;
+    align-self: flex-start;
+    font-family: 'agmenaRegular';
+}
+
 .lore {
     position: relative;
     display: flex;
     flex-direction: column;
     width: 100%;
     align-items: center;
-
-    .loreTitle {
-        font-size: 28px;
-        align-self: flex-start;
-        font-family: 'agmenaRegular';
-    }
 
     .loreImg{
         border-radius: 20px;

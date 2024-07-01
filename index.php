@@ -46,8 +46,21 @@ $items = getItems($items, $category);
             <span class="titlePart">E</span>
         </h1>
         <h2>c'est ici que les sans éclats partagent leurs connaissances concernant l'entre terre</h2>
-        <input type="text" class="bannerInput" id="searchInput" placeholder="Rechercher..">
-        <div id="filter">
+        <div id="searchInput">
+            <div class="searchFilter">
+        <input type="text" class="bannerInput"  placeholder="Rechercher.."> 
+        <div class="moreFilter">
+            <span class="material-symbols-rounded">
+                sort
+            </span>
+        </div>
+</div>
+        <!-- <div class="searchBtns">
+            <button class="searchBtn">Articles</button>
+            <button class="searchBtn">Lore</button>
+        </div> -->
+</div>
+<div id="filter">
             <ul>
                 <li data-category="all">TOUT</li>
                 <li data-category="arme">ARMES</li>
@@ -55,11 +68,13 @@ $items = getItems($items, $category);
                 <li data-category="objet">OBJETS</li>
                 <li data-category="personnage">PERSONNAGES</li>
                 <li data-category="pnj">PNJ</li>
-            </ul>
+</ul>
         </div>
+</div>
     </div>
-    
     <div id="allItems">
+    <h2 class="loreTitle">Articles</h2>
+    <div class="allArticles">
         <?php foreach ($items as $item) : ?>
             <article class="item" data-category="<?php echo strtolower($item['category']); ?>">
                 <div class="articleBackground">
@@ -83,6 +98,7 @@ $items = getItems($items, $category);
                 </div>
             </article>
         <?php endforeach ?>
+        </div>
         <div class="lore">
             <h2 class="loreTitle">Lore des sans éclats</h2>
         <img src="https://i.ibb.co/CVymbJK/er-sote-screenshot-4.jpg" alt="" class="loreImg">

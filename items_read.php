@@ -73,21 +73,24 @@ foreach ($itemWithComments as $comment) {
 
 </head>
 <body>
+<?php require_once(__DIR__ . '/header.php'); ?>
+
 <h2 id="headerTitle" class="opacity">
         <span class="titlePart">E</span>
         <span class="title">LDEN LOR</span>
         <span class="titlePart">E</span>
     </h2>
+    <?php if (isset($_SESSION['LOGGED_USER'])) : ?>
     <div class="loginWelcome" role="alert">
         <img src="<?php echo $_SESSION['LOGGED_USER']['picture']; ?>" alt="Photo de profil" class="profilePicture">
         <li class="loggedLink">
                     <a href="logout.php">DECONNEXION</a>
                     </li>
     </div>
+    <?php endif; ?>
     <div id="read">
     <h1><?php echo($item['title']); ?></h1>
         <div id="readContent" class="readContent">
-        <?php require_once(__DIR__ . '/header.php'); ?>
         <div class="itemPreview">
         <article class="item preview">
                 <div class="articleBackground">
