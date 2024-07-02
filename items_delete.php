@@ -46,9 +46,6 @@ $item = $retrieveItemStatement->fetch(PDO::FETCH_ASSOC);
         <span class="title">LDEN LOR</span>
         <span class="titlePart">E</span>
     </h2>
-    <div class="loginWelcome" role="alert">
-        <img src="<?php echo $_SESSION['LOGGED_USER']['picture']; ?>" alt="Photo de profil" class="profilePicture">
-    </div>
         <div id="delete">
         <h1>Supprimer un article</h1>
             <div id="deleteContent" class="deleteContent">

@@ -33,12 +33,6 @@ require_once(__DIR__ . '/isConnect.php');
         <span class="title">LDEN LOR</span>
         <span class="titlePart">E</span>
     </h2>
-    <div class="loginWelcome" role="alert">
-        <img src="<?php echo $_SESSION['LOGGED_USER']['picture']; ?>" alt="Photo de profil" class="profilePicture">
-                    <li class="loggedLink">
-                    <a href="logout.php">DECONNEXION</a>
-                    </li>
-    </div>
 <div id="create">
 <h1>Ajouter un article</h1>
 

@@ -24,11 +24,6 @@ arrow_back
 person
 </span>
                 <ul>
-                <?php if (isset($_SESSION['LOGGED_USER'])) : ?>
-                    <li class="loginLink">
-                    <a href="logout.php">DECONNEXION</a>
-                    </li>
-                    <?php endif; ?>
                     <li class="loginLink">
                         <a href="#" id="loginLink">CONNEXION</a>
                     </li>
@@ -38,17 +33,19 @@ person
                 </ul>
     </div>
                 <?php endif; ?>
-
                 <?php if (isset($_SESSION['LOGGED_USER'])) : ?>
-                    <?php 
-                // Obtenir l'URL actuelle
-                $current_url = $_SERVER['REQUEST_URI']; 
-                // Vérifier si l'URL contient "index"
-                if (strpos($current_url, 'index') !== false) : 
-                ?>
-                    <li class="createLink">
+                <div class="loginWelcome" role="alert">
+        <img src="<?php echo $_SESSION['LOGGED_USER']['picture']; ?>" alt="Photo de profil" class="profilePicture">
+        <ul>            
+        <li class="headerLink">
                         <a href="items_create.php" id="createLink">AJOUTEZ UN ARTICLE</a>
                     </li>
-                    <?php endif; ?>
-                <?php endif; ?>
+        <li class="headerLink">
+                    <a href="logout.php">DECONNEXION</a>
+                    </li>
+</ul>
+    </div>
+    <?php endif; ?>
+
+
 </div>
