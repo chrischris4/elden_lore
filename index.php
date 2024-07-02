@@ -43,7 +43,7 @@ $items = getItems($items, $category);
         <h2>c'est ici que les sans éclats partagent leurs connaissances concernant l'entre terre</h2>
         <div id="searchInput">
             <div class="searchFilter">
-                <input type="text" class="bannerInput"  placeholder="Rechercher.."> 
+                <input type="text" class="bannerInput" id="searchField" placeholder="Rechercher.."> 
                     <div id="moreFilter">
                         <span class="material-symbols-rounded">
                             sort
@@ -119,6 +119,7 @@ Marika est donc la nouvelle Déesse et gagne le titre d’Empyréenne, une disti
             const overlay = document.getElementById('modalOverlay');
             const filterLinks = document.querySelectorAll('#filter ul li');
             const items = document.querySelectorAll('#allItems .item');
+            const searchField = document.getElementById('searchField');
             const searchInput = document.getElementById('searchInput');
             const divTest = document.getElementById('divTest');
             const headerTitle = document.getElementById('headerTitle');
@@ -149,8 +150,8 @@ Marika est donc la nouvelle Déesse et gagne le titre d’Empyréenne, une disti
                 });
             });
 
-            searchInput.addEventListener('input', () => {
-                const searchText = searchInput.value.trim().toLowerCase();
+            searchField.addEventListener('input', () => {
+                const searchText = searchField.value.trim().toLowerCase();
 
                 items.forEach(item => {
                     const title = item.querySelector('h3').textContent.trim().toLowerCase();
@@ -163,8 +164,8 @@ Marika est donc la nouvelle Déesse et gagne le titre d’Empyréenne, une disti
                 });
             });
 
-            searchInput.addEventListener('input', () => {
-                if (searchInput.value.trim() === '') {
+            searchField.addEventListener('input', () => {
+                if (searchField.value.trim() === '') {
                     items.forEach(item => {
                         item.classList.remove('hidden');
                     });

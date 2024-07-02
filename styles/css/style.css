@@ -119,6 +119,7 @@
 }
 
 .searchFilter {
+  z-index: 12;
   display: flex;
 }
 
