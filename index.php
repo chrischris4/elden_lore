@@ -43,7 +43,7 @@ $items = getItems($items, $category);
         <h2>c'est ici que les sans éclats partagent leurs connaissances concernant l'entre terre</h2>
         <div id="searchInput">
             <div class="searchFilter">
-                <input type="text" class="bannerInput" id="searchField" placeholder="Rechercher.."> 
+                <input type="text" class="bannerInput" id="searchField" placeholder="Rechercher dans articles.."> 
                     <div id="moreFilter">
                         <span class="material-symbols-rounded">
                             sort
@@ -68,7 +68,8 @@ $items = getItems($items, $category);
 </div>
     </div>
     <div id="allItems">
-    <h2 class="loreTitle">Articles</h2>
+    <h2 id="articlesTitle">Articles</h2>
+    <div id="articlesLink"></div>
     <div class="allArticles">
         <?php foreach ($items as $item) : ?>
             <a href="items_read.php?id=<?php echo($item['items_id']); ?>">
@@ -97,7 +98,8 @@ $items = getItems($items, $category);
         <?php endforeach ?>
         </div>
         <div class="lore">
-            <h2 class="loreTitle">Lore des sans éclats</h2>
+            <h2 id="loreTitle">Lore des sans éclats</h2>
+            <div id="loreLink"></div>
         <img src="https://i.ibb.co/CVymbJK/er-sote-screenshot-4.jpg" alt="" class="loreImg">
         <p>Le commencement de cette histoire se déroule non pas dans l’Entre-terre, mais dans le cosmos, où sont présentes des divinités supérieures que nous ne verrons jamais. Et celle qui nous intéresse se nomme la Volonté suprême.
 
@@ -223,7 +225,7 @@ Marika est donc la nouvelle Déesse et gagne le titre d’Empyréenne, une disti
                 const scrollY = window.scrollY;
                 divTest.classList.toggle('scrolled', scrollY > 50);
                 searchInput.classList.toggle('showTitle', scrollY > 365);
-                headerTitle.classList.toggle('showTitle', scrollY > 150);
+                headerTitle.classList.toggle('showTitle', scrollY > 365);
                 header.classList.toggle('showTitle', scrollY > 365);
             });
         });

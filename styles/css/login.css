@@ -1,5 +1,4 @@
 .modalForm {
-  z-index: 4;
   width: 40%;
   position: relative;
   display: flex;
@@ -72,7 +71,7 @@ textarea {
   left: 0;
   width: 100%;
   height: 100vh;
-  z-index: 11;
+  z-index: 100;
   justify-content: center;
   align-items: center;
   display: flex;
@@ -157,6 +156,7 @@ textarea {
 .updateForm label, .createForm label {
   font-size: 24px;
 }
+
 .comments {
   width: 90%;
 }
@@ -183,7 +183,7 @@ textarea {
 }
 
 #modalOverlay.showOverlay {
-  z-index: 11;
+  z-index: 99;
   opacity: 1;
 }
 

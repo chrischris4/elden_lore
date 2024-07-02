@@ -101,10 +101,10 @@
 }
 
 #searchInput {
+  z-index: 50;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  z-index: 12;
   font-family: "Nunito", sans-serif;
   color: white;
   position: absolute;
@@ -254,7 +254,7 @@ article {
   width: 26%;
   margin-bottom: 40px;
   border: 8px solid black;
-  transition: scale 0.2s ease-in-out;
+  transition: scale 0.1s ease-in-out;
 }
 article .articleImg {
   z-index: 2;
@@ -330,10 +330,15 @@ article.preview:hover {
   opacity: 1;
 }
 
-.loreTitle {
+#loreTitle, #articlesTitle {
   font-size: 28px;
   align-self: flex-start;
   font-family: "agmenaRegular";
+}
+
+#articlesLink, #loreLink {
+  position: absolute;
+  top: -95px;
 }
 
 .lore {
