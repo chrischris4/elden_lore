@@ -1,9 +1,10 @@
 <div id="header">
 <?php $current_url = $_SERVER['REQUEST_URI']; 
  if (strpos($current_url, 'index') === false) : ?>
-                        <a class="goBackLink" href="index.php"><span class="material-symbols-rounded">
+                        <a href="index.php">
+                            <div class="goBackLink"><span class="material-symbols-rounded">
 arrow_back
-</span></a>
+</span></div></a>
                 <?php endif; ?>
 <h2 id="headerTitle">
         <span class="titlePart">E</span>
@@ -46,6 +47,37 @@ person
 </ul>
     </div>
     <?php endif; ?>
+    <script>
+    const header = document.getElementById('header');
+    const headerTitle = document.getElementById('headerTitle');
 
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Récupère l'URL actuelle
+    let currentUrl = window.location.href;
+
+    // Vérifie si l'URL ne contient pas "index"
+    if (!currentUrl.includes("index")) {
+        // Sélectionne l'élément header par son identifiant
+        let header = document.getElementById("header");
+        let headerTitle = document.getElementById("headerTitle")
+
+        // Ajoute une classe au header
+        headerTitle.classList.add("showTitle")
+        header.classList.add("headerStyle");
+    }
+});
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+
+                    // Défilement fluide vers l'élément ciblé
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+</script>
 
 </div>

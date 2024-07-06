@@ -43,7 +43,7 @@ if (isset($_FILES['picture']) && $_FILES['picture']['error'] == UPLOAD_ERR_OK) {
         // Vérifier la taille du fichier (exemple : max 5MB)
         if ($_FILES["picture"]["size"] <= 5000000) {
             // Limiter certains formats de fichier
-            if (in_array($pictureFileType, ['jpg', 'jpeg', 'png', 'gif'])) {
+            if (in_array($pictureFileType, ['jpg', 'jpeg', 'png', 'gif', 'webp'])) {
                 if (!file_exists($target_dir)) {
                     mkdir($target_dir, 0777, true);
                 }

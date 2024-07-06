@@ -45,7 +45,6 @@ require_once(__DIR__ . '/isConnect.php');
                     <option value="objet">Objet</option>
                     <option value="boss">Boss</option>
                     <option value="personnage">Personnage</option>
-                    <option value="pnj">PNJ</option>
                     <option value="arme">Arme</option>
                 </select>
             </div>

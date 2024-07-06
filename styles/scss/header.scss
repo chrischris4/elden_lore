@@ -30,6 +30,11 @@
     }
 }
 
+#header.headerStyle {
+  background-color: black;
+  border-bottom: 2px solid #caab79;
+}
+
 .loggedLink {
   position: absolute;
   left: 80px;
@@ -41,6 +46,13 @@
 }
 
 .goBackLink {
+  border: 2px solid #caab79;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 35px;
+  width: 35px;
   margin-left: 20px;
 }
 
@@ -81,6 +93,7 @@
 #headerTitle.showTitle {
   opacity: 1;
 }
+
 
 #headerNav {
   z-index: 50;
@@ -183,3 +196,4 @@
   width: 40px;
   border-radius: 50%;
 }
+

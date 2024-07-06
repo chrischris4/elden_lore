@@ -30,6 +30,7 @@ $items = getItems($items, $category);
     <?php require_once(__DIR__ . '/subscribe.php'); ?>
     <?php require_once(__DIR__ . '/header.php'); ?>
 
+    <div id="topLink"></div>
     <div id="divTest">
         <div class="bannerOverlay"></div>
         <img src="https://i.ibb.co/SP9dgs5/8m1e66o7pyka1-1.webp" alt="elden_ring_banner" class="bannerTest">
@@ -44,31 +45,28 @@ $items = getItems($items, $category);
         <div id="searchInput">
             <div class="searchFilter">
                 <input type="text" class="bannerInput" id="searchField" placeholder="Rechercher dans articles.."> 
-                    <div id="moreFilter">
+            </div>
+        </div>
+</div>
+    </div>
+    <div id="allItems">
+        <div class="articlesTitleContent">
+    <h2 id="articlesTitle">Articles</h2> 
+    <div id="moreFilter">
                         <span class="material-symbols-rounded">
                             sort
                         </span>
                     </div>
-            </div>
-            <div id="filter">
+    <div id="filter">
                         <ul>
                             <li data-category="all">TOUT</li>
                             <li data-category="arme">ARMES</li>
                             <li data-category="boss">BOSS</li>
                             <li data-category="objet">OBJETS</li>
                             <li data-category="personnage">PERSONNAGES</li>
-                            <li data-category="pnj">PNJ</li>
                         </ul>
-                    </div>
-        <!-- <div class="searchBtns">
-            <button class="searchBtn">Articles</button>
-            <button class="searchBtn">Lore</button>
-        </div> -->
-        </div>
-</div>
     </div>
-    <div id="allItems">
-    <h2 id="articlesTitle">Articles</h2>
+    </div>
     <div id="articlesLink"></div>
     <div class="allArticles">
         <?php foreach ($items as $item) : ?>
@@ -100,17 +98,35 @@ $items = getItems($items, $category);
         <div class="lore">
             <h2 id="loreTitle">Lore des sans éclats</h2>
             <div id="loreLink"></div>
-        <img src="https://i.ibb.co/CVymbJK/er-sote-screenshot-4.jpg" alt="" class="loreImg">
+            <div class="loreSection">
+        <img src="https://i.ibb.co/DCdZDhC/UYGr9ddyp-BP3-Qux-C6zf-Ky-Q.jpg" alt="" class="loreImg">
         <p>Le commencement de cette histoire se déroule non pas dans l’Entre-terre, mais dans le cosmos, où sont présentes des divinités supérieures que nous ne verrons jamais. Et celle qui nous intéresse se nomme la Volonté suprême.
 
-Afin de prendre possession de l’Entre-terre, elle envoya une comète avec en son sein la bête d’Elden, qui est la véritable forme du Cercle d’Elden. De l’impact de la comète va pousser un arbre géant doré, symbole dans tout l’Entre-terre de la Volonté suprême. Cette dernière, maintenant installée dans l’Entre-terre, va devoir trouver le moyen d’étendre son influence. Pour commencer, elle va créer des agents qui transmettent les ordres de la divinité extérieure en la présence des Deux Doigts ; ordres qui passeront ensuite par les Augures des Doigts, les seuls êtres capables de retranscrire le langage de la Volonté suprême dans une langue compréhensible.
+Afin de prendre possession de l’Entre-terre, elle envoya une comète avec en son sein la bête d’Elden, qui est la véritable forme du Cercle d’Elden.</p></div>
+<div class="loreSection reverse">
+        <img src="https://i.ibb.co/3yG67BT/dohqbcwklz991.webp" alt="" class="loreImg">
+        <p>De l’impact de la comète va pousser un arbre géant doré, symbole dans tout l’Entre-terre de la Volonté suprême. Cette dernière, maintenant installée dans l’Entre-terre, va devoir trouver le moyen d’étendre son influence.</p></div><div class="loreSection">
+        <img src="https://i.ibb.co/WFcgYJ8/ded7d33697cdace36e05e4b29dddd141-0.png" alt="" class="loreImg">
+        <p>Pour commencer, elle va créer des agents qui transmettent les ordres de la divinité extérieure en la présence des Deux Doigts ; ordres qui passeront ensuite par les Augures des Doigts, les seuls êtres capables de retranscrire le langage de la Volonté suprême dans une langue compréhensible.</p></div>
+        <div class="loreSection reverse">
+        <img src="https://i.ibb.co/kQG2nVt/Queen-Marika-the-Eternal.webp" alt="" class="loreImg">
+        <p>Tout étant quasiment en place, il ne manque donc plus qu’un Dieu ou une Déesse pour représenter la Volonté suprême auprès des peuples, ainsi que de pouvoir agir pour étendre les commandements de la divinité extérieure. Pour cela, la Volonté suprême va se tourner vers Marika, du peuple des « Numen », race dont on sait peu de choses, en dehors du fait qu’ils viennent d’ailleurs que de l’Entre-terre.
 
-	
-Tout étant quasiment en place, il ne manque donc plus qu’un Dieu ou une Déesse pour représenter la Volonté suprême auprès des peuples, ainsi que de pouvoir agir pour étendre les commandements de la divinité extérieure. Pour cela, la Volonté suprême va se tourner vers Marika, du peuple des « Numen », race dont on sait peu de choses, en dehors du fait qu’ils viennent d’ailleurs que de l’Entre-terre.
+Marika est donc la nouvelle Déesse et gagne le titre d’Empyréenne, une distinction obtenue en étant l’enfant de Dieu et choisi par les Deux Doigts afin de remplacer le dieu en place. Elle va alors hériter du cercle d’Elden, un ensemble de Runes qui régit les règles les plus élémentaires du monde de l’Entre-terre, comme la vie et la mort. Toutes ses règles se font appeler l’Ordre d’or.</p></div>
 
-Marika est donc la nouvelle Déesse et gagne le titre d’Empyréenne, une distinction obtenue en étant l’enfant de Dieu et choisi par les Deux Doigts afin de remplacer le dieu en place. Elle va alors hériter du cercle d’Elden, un ensemble de Runes qui régit les règles les plus élémentaires du monde de l’Entre-terre, comme la vie et la mort. Toutes ses règles se font appeler l’Ordre d’or. Quelque temps plus tard, pour une raison ou une autre, Marika brisa le cercle d'elden, laissant éclater une guerre au sein de l'entre terre, une guerre dont le but est de devenir le nouveau seigneur l'Elden et par la même occasion appliquer un nouvel Ordre, c'est dans ce context, que les sans éclats, tentent à leur tour de s'emparer du trône tant convoité.</p>
+<div class="loreSection">
+        <img src="https://i.ibb.co/CVymbJK/er-sote-screenshot-4.jpg" alt="" class="loreImg">
+        <p> Quelque temps plus tard, pour une raison ou une autre, Marika brisa le cercle d'elden, laissant éclater une guerre au sein de l'entre terre, une guerre dont le but est de devenir le nouveau seigneur l'Elden et par la même occasion appliquer un nouvel Ordre, c'est dans ce context, que les sans éclats, tentent à leur tour de s'emparer du trône tant convoité.</p></div>
         </div>
     </div>
+
+    <a href="#topLink">
+    <div id="goBackTop">
+    <span class="material-symbols-rounded">
+arrow_upward
+</span>
+    </div>
+    </a>
     
     <?php require_once(__DIR__ . '/footer.php'); ?>
 
@@ -126,14 +142,7 @@ Marika est donc la nouvelle Déesse et gagne le titre d’Empyréenne, une disti
             const divTest = document.getElementById('divTest');
             const headerTitle = document.getElementById('headerTitle');
             const header = document.getElementById('header');
-            const moreFilter = document.getElementById('moreFilter');
             const filter = document.getElementById('filter');
-
-
-                moreFilter.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    filter.classList.add('showFilter');
-                });
 
 //////////////////////////////FILTERS////////////////////////////////////////////
 
@@ -229,6 +238,19 @@ Marika est donc la nouvelle Déesse et gagne le titre d’Empyréenne, une disti
                 header.classList.toggle('showTitle', scrollY > 365);
             });
         });
+
+///////////////////////////////SCROLL EFFECT FOR LINKS/////////////////////////////////
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+
+                    // Défilement fluide vers l'élément ciblé
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
     </script>
 </body>
 </html>
