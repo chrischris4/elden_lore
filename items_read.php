@@ -89,9 +89,8 @@ foreach ($itemWithComments as $comment) {
         </div>
         <div class="commentsContainer">
             <div class="comments">
+            <h2>Commentaires</h2>
                 <div class="allComment">
-                <h2>Commentaires</h2>
-
                 <?php if ($item['comments'] !== []) : ?>
                     <?php foreach ($item['comments'] as $comment) : ?>
                         <div class="comment">
@@ -106,7 +105,6 @@ foreach ($itemWithComments as $comment) {
                                 <p><?php echo htmlspecialchars($comment['comment']); ?></p>
                             </div>
                         </div>
-                        <hr />
                     <?php endforeach; ?>
                     </div>
                 <?php else : ?>

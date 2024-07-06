@@ -399,7 +399,10 @@ article.preview:hover {
   min-height: 100%;
 }
 .commentsContainer form {
-  width: 90%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 20px 0;
 }
 
 .comments {
@@ -412,7 +415,34 @@ article.preview:hover {
   margin-top: 0;
 }
 
+.allComment {
+  overflow: auto;
+  display: flex;
+  max-height: 300px;
+  flex-direction: column;
+}
+
+.allComment::-webkit-scrollbar {
+  width: 5px;
+}
+
+.allComment::-webkit-scrollbar-thumb {
+  background-color: rgb(61, 61, 61);
+  border-radius: 10px;
+  height: 20px;
+}
+
+.allComment::-webkit-scrollbar-thumb:hover {
+  background-color: #caab79;
+}
+
+.allComment::-webkit-scrollbar-track {
+  background: none;
+}
+
 .comment {
+  margin-bottom: 15px;
+  border-bottom: 2px solid;
   display: flex;
 }
 
