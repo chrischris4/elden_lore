@@ -52,6 +52,46 @@ foreach ($itemWithComments as $comment) {
         ];
     }
 }
+
+// Traitement du formulaire de commentaire
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_SESSION['LOGGED_USER'])) {
+    $postData = $_POST;
+
+    if (
+        isset($postData['comment']) &&
+        isset($postData['items_id']) &&
+        is_numeric($postData['items_id'])
+    ) {
+        $comment = trim(strip_tags($postData['comment']));
+        $itemsId = (int)$postData['items_id'];
+
+        if ($comment !== '') {
+            $insertItem = $mysqlClient->prepare('INSERT INTO comments(comment, items_id, user_id) VALUES (:comment, :items_id, :user_id)');
+            $insertItem->execute([
+                'comment' => $comment,
+                'items_id' => $itemsId,
+                'user_id' => $_SESSION['LOGGED_USER']['user_id'],
+            ]);
+
+            $newCommentId = $mysqlClient->lastInsertId();
+            $retrieveComment = $mysqlClient->prepare('SELECT c.comment, c.user_id, u.picture AS user_picture, DATE_FORMAT(c.created_at, "%d/%m/%Y") as comment_date, u.pseudo FROM comments c 
+JOIN users u ON u.user_id = c.user_id
+WHERE c.comment_id = :comment_id');
+            $retrieveComment->execute(['comment_id' => $newCommentId]);
+            $newComment = $retrieveComment->fetch(PDO::FETCH_ASSOC);
+
+            $item['comments'][] = [
+                'comment_id' => $newCommentId,
+                'comment' => $newComment['comment'],
+                'user_id' => (int)$newComment['user_id'],
+                'picture' => $newComment['user_picture'],
+                'pseudo' => $newComment['pseudo'],
+                'created_at' => $newComment['comment_date'],
+            ];
+        }
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -89,31 +129,41 @@ foreach ($itemWithComments as $comment) {
         </div>
         <div class="commentsContainer">
             <div class="comments">
-            <h2>Commentaires</h2>
-                <div class="allComment">
-                <?php if ($item['comments'] !== []) : ?>
-                    <?php foreach ($item['comments'] as $comment) : ?>
-                        <div class="comment">
-                            <div class="commentsPicture">
-                                <img src="<?php echo htmlspecialchars($comment['picture']); ?>" alt="User Picture" class="profilePicture"> <!-- Utilisation de la clé correcte pour l'image utilisateur -->
-                            </div>
-                            <div class="commentsContent">
-                                <div class="commentsTitle">
-                                    <p><?php echo htmlspecialchars($comment['pseudo']); ?></p>
-                                    <p><?php echo htmlspecialchars($comment['created_at']); ?></p>
+                <div>
+                    <h2>Commentaires</h2>
+                    <div class="allComment">
+                    <?php if ($item['comments'] !== []) : ?>
+                        <?php foreach ($item['comments'] as $comment) : ?>
+                            <div class="comment">
+                                <div class="commentsPicture">
+                                    <img src="<?php echo htmlspecialchars($comment['picture']); ?>" alt="User Picture" class="profilePicture"> <!-- Utilisation de la clé correcte pour l'image utilisateur -->
                                 </div>
-                                <p><?php echo htmlspecialchars($comment['comment']); ?></p>
+                                <div class="commentsContent">
+                                    <div class="commentsTitle">
+                                        <p><?php echo htmlspecialchars($comment['pseudo']); ?></p>
+                                        <p><?php echo htmlspecialchars($comment['created_at']); ?></p>
+                                    </div>
+                                    <p><?php echo htmlspecialchars($comment['comment']); ?></p>
+                                </div>
                             </div>
+                        <?php endforeach; ?>
+                    <?php else : ?>
+                        <div class="row">
+                            <p>Aucun commentaire</p>
                         </div>
-                    <?php endforeach; ?>
+                    <?php endif; ?>
                     </div>
-                <?php else : ?>
-                    <div class="row">
-                        <p>Aucun commentaire</p>
-                    </div>
-                <?php endif; ?>
+                </div>
                 <?php if (isset($_SESSION['LOGGED_USER'])) : ?>
-                    <?php require_once(__DIR__ . '/comments_create.php'); ?>
+                    <form id="commentForm" method="POST">
+                        <input class="commentsId" type="hidden" name="items_id" value="<?php echo($item['items_id']); ?>" />
+                        <div class="commentsForm">
+                            <label for="comment" class="form-label">Ajoutez un commentaire...</label>
+                            <textarea class="commentsInput" placeholder="Soyez respectueux/se, nous sommes humain(e)s." id="comment" name="comment"></textarea>
+                        </div>
+                        <button type="submit" class="formBtn">Envoyer</button>
+                    </form>
+                    <div id="commentMessage"></div>
                 <?php endif; ?>
             </div>
         </div>
@@ -125,8 +175,9 @@ foreach ($itemWithComments as $comment) {
 </div>
 <?php require_once(__DIR__ . '/footer.php'); ?>
 
-<?php if (!isset($_SESSION['LOGGED_USER'])) : ?>
+<?php if (isset($_SESSION['LOGGED_USER'])) : ?>
 <script>
+    <?php if (!isset($_SESSION['LOGGED_USER'])) : ?>
     const overlay = document.getElementById('modalOverlay');
     const loginLink = document.getElementById('loginLink');
     const loginForm = document.getElementById('modalLogin');
@@ -168,6 +219,51 @@ foreach ($itemWithComments as $comment) {
             overlay.classList.remove('showOverlay');
         });
     }
+    <?php endif; ?>
+    document.getElementById('commentForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Empêcher l'envoi classique du formulaire
+
+    const formData = new FormData(this);
+
+    fetch('comments_post_create.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Erreur réseau.');
+        }
+        return response.json();
+    })
+    .then(data => {
+        const commentMessage = document.getElementById('commentMessage');
+        if (data.success) {
+            commentMessage.innerHTML = '<p style="color: green;">' + data.message + '</p>';
+            // Ajouter le nouveau commentaire sans recharger la page
+            const newComment = `
+                <div class="comment">
+                    <div class="commentsPicture">
+                        <img src="${data.comment.picture}" alt="User Picture" class="profilePicture">
+                    </div>
+                    <div class="commentsContent">
+                        <div class="commentsTitle">
+                            <p>${data.comment.pseudo}</p>
+                            <p>${data.comment.created_at}</p>
+                        </div>
+                        <p>${data.comment.comment}</p>
+                    </div>
+                </div>
+            `;
+            document.querySelector('.allComment').innerHTML += newComment;
+        } else {
+            commentMessage.innerHTML = '<p style="color: red;">' + data.message + '</p>';
+        }
+    })
+    .catch(error => {
+        document.getElementById('commentMessage').innerHTML = '<p style="color: red;">Une erreur est survenue : ' + error.message + '</p>';
+    });
+});
+
 </script>
 <?php endif; ?>
 </body>

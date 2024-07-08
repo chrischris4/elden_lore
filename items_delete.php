@@ -49,7 +49,7 @@ $item = $retrieveItemStatement->fetch(PDO::FETCH_ASSOC);
         <div id="delete">
         <h1>Supprimer un article</h1>
             <div id="deleteContent" class="deleteContent">
-        <div class="itemPreview">
+        <div class="deletePreview">
         <article class="item preview">
                 <div class="articleBackground">
                     <img src="https://i.ibb.co/JQWNDhW/dark-texture-watercolor-1.webp" alt="">

@@ -112,9 +112,6 @@ textarea {
     display: flex;
     background-color: rgba(53, 53, 53, 0.8);
     position: relative;
-}
-
-.deleteContent, .readContent {
     padding: 40px 0px;
 }
 
@@ -138,12 +135,18 @@ textarea {
     }
 }
 
+.deletePreview {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+}
+
 .itemContainer, .commentsContainer {
     width: 50%;
 }
 
 .itemPreview {
-    width: 50%;
+    width: 60%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -155,7 +158,7 @@ textarea {
 }
 
 .updateForm, .createForm {
-    width: 50%;
+    width: 40%;
     z-index: 2;
     margin: 40px 0px;
     display: flex;
@@ -222,7 +225,7 @@ textarea {
     padding: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
 
     h2{
         margin-top: 0;

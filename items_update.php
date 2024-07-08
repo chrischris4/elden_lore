@@ -81,7 +81,7 @@ require_once(__DIR__ . '/isConnect.php');
             <button type="submit" class="formBtn">Mettre à jour</button>
         </form>
 </div>
-<div class="createPreview">
+<div class="itemPreview">
     
 <article class="item preview">
                 <div class="articleBackground">
