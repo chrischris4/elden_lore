@@ -105,6 +105,7 @@ WHERE c.comment_id = :comment_id');
     <link rel="stylesheet" href="styles/css/style.css">
     <link rel="stylesheet" href="styles/css/header.css">
     <link rel="stylesheet" href="styles/css/createUpdateDelete.css">
+    <link rel="stylesheet" href="styles/css/article.css">
     <link rel="stylesheet" href="styles/css/login.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
@@ -146,7 +147,7 @@ WHERE c.comment_id = :comment_id');
                                                 <p><?php echo htmlspecialchars($comment['pseudo']); ?></p>
                                                 <p><?php echo htmlspecialchars($comment['created_at']); ?></p>
                                             </div>
-                                            <p><?php echo htmlspecialchars($comment['comment']); ?></p>
+                                            <p class="commentsText"><?php echo htmlspecialchars($comment['comment']); ?></p>
                                         </div>
                                     </div>
                                 <?php endforeach; ?>
@@ -158,12 +159,12 @@ WHERE c.comment_id = :comment_id');
                         </div>
                     </div>
                     <?php if (!isset($_SESSION['LOGGED_USER'])) : ?>
-                        <div class="logSubLinks">
+                        <div class="commentsLinks">
                             <p>Pour pouvoir ajouter un commentaire</p>
-                            <div class="logSubBtns">
-                                <button>Se connecter</button>
+                            <div class="commentsBtns">
+                                <button class="commentsBtn">Connectez vous</button>
                                 <p>ou</p>
-                                <button>Crée un compte</button>
+                                <button class="commentsBtn">Créez un compte</button>
                             </div>
                         </div>
                     <?php endif; ?>

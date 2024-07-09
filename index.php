@@ -18,6 +18,7 @@ $items = getItems($items, $category);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elden Lore</title>
     <link rel="stylesheet" href="styles/css/style.css">
+    <link rel="stylesheet" href="styles/css/article.css">
     <link rel="stylesheet" href="styles/css/header.css">
     <link rel="stylesheet" href="styles/css/login.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">

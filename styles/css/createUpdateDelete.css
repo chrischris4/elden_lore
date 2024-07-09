@@ -52,19 +52,15 @@
     }
 }
 
-.deletePreview {
+.itemContainer,
+.commentsContainer {
     display: flex;
     justify-content: center;
     width: 50%;
 }
 
-.itemContainer,
-.commentsContainer {
-    width: 50%;
-}
-
 .itemPreview {
-    width: 60%;
+    width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -77,16 +73,29 @@
 
 .updateForm,
 .createForm {
-    width: 40%;
+    width: 50%;
     z-index: 2;
-    margin: 40px 0px;
     display: flex;
     flex-direction: column;
+    align-items: center;
     padding: 0px 20px;
-    border-right: 2px solid;
 
     label {
-        font-size: 24px;
+        font-size: 20px;
+    }
+
+    form {
+        width: 80%;
+    }
+
+    textarea {
+        font-family: 'nunito';
+        padding: 10px;
+        resize: none;
+        resize: vertical;
+        outline: none;
+        border-radius: 5px;
+        height: 120px;
     }
 }
 
@@ -106,12 +115,26 @@ select {
         flex-direction: column;
         width: 100%;
     }
+
+    textarea {
+        font-family: 'nunito';
+        padding: 10px;
+        resize: none;
+        resize: vertical;
+        outline: none;
+        border-radius: 5px;
+        height: 45px;
+    }
 }
 
 .commentsForm {
     margin: 20px 0;
     display: flex;
     flex-direction: column;
+
+    label {
+        margin-bottom: 5px;
+    }
 }
 
 .comments {
@@ -127,6 +150,7 @@ select {
 }
 
 .allComment {
+    padding-right: 15px;
     overflow: auto;
     display: flex;
     max-height: 300px;
@@ -152,12 +176,17 @@ select {
 }
 
 .comment {
+    padding: 10px;
+    border-radius: 20px;
+    background-color: #caab794a;
     margin-bottom: 15px;
-    border-bottom: 2px solid;
     display: flex;
 }
 
 #commentMessage {
+    position: absolute;
+    bottom: 0;
+    transform: translateY(-200%);
     display: flex;
 }
 
@@ -170,29 +199,37 @@ select {
 }
 
 .commentsContent {
+    width: 100%;
     margin-left: 20px;
 }
 
 .commentsTitle {
     display: flex;
+    justify-content: space-between;
 
     p {
         margin: 0;
-        margin-right: 20px;
     }
 }
 
-.logSubLinks {
-    display: flex;
-    flex-direction: column;
+.commentsText {
+    margin-bottom: 0;
 }
 
-.logSubBtns {
+.commentsLinks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.commentsBtns {
     display: flex;
     justify-content: center;
 }
 
-.button {
+.commentsBtn {
+    margin: 0px 10px;
+    padding: 0px 20px;
     border-radius: 5px;
     border: 2px solid black;
 }

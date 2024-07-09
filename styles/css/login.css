@@ -17,7 +17,8 @@
   flex-direction: column;
   width: 100%;
 }
-.modalForm #loginClose, .modalForm #subClose, .modalForm #createClose {
+.modalForm #loginClose,
+.modalForm #subClose {
   z-index: 5;
   cursor: pointer;
   position: absolute;
@@ -42,28 +43,12 @@ input:focus {
   outline: none;
 }
 
-button {
-  cursor: pointer;
-  font-size: 16px;
-  font-family: "nunito";
-  background-color: #caab79;
-}
-
-textarea {
-  font-family: "nunito";
-  padding: 10px;
-  resize: none;
-  resize: vertical;
-  outline: none;
-  border-radius: 5px;
-  height: 50px;
-}
-
 .opacityLow {
   opacity: 0.7;
 }
 
-#modalLogin, #modalSub {
+#modalLogin,
+#modalSub {
   transform: translateX(250%);
   transition: transform 0.4s ease-in-out;
   position: fixed;
@@ -77,86 +62,9 @@ textarea {
   display: flex;
 }
 
-#modalLogin.show, #modalSub.show {
+#modalLogin.show,
+#modalSub.show {
   transform: translateX(0%);
-}
-
-#delete, #update, #create, #read {
-  z-index: 2;
-  margin: 100px 0px;
-  width: 100%;
-  z-index: 5;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-}
-#delete h1, #update h1, #create h1, #read h1 {
-  z-index: 2;
-  align-self: flex-start;
-  margin-left: 5%;
-}
-
-#updateContent, #deleteContent, #createContent, #readContent {
-  z-index: 2;
-  border-radius: 20px;
-  width: 90%;
-  justify-content: space-between;
-  display: flex;
-  background-color: rgba(53, 53, 53, 0.8);
-  position: relative;
-  padding: 40px 0px;
-}
-
-#deleteContent form {
-  width: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-#deleteContent form p {
-  margin-bottom: 20px;
-  font-weight: 100;
-  font-size: 14px;
-}
-#deleteContent form button {
-  width: 50%;
-}
-
-.deletePreview {
-  display: flex;
-  justify-content: center;
-  width: 50%;
-}
-
-.itemContainer, .commentsContainer {
-  width: 50%;
-}
-
-.itemPreview {
-  width: 60%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.z {
-  z-index: 1;
-}
-
-.updateForm, .createForm {
-  width: 40%;
-  z-index: 2;
-  margin: 40px 0px;
-  display: flex;
-  flex-direction: column;
-  padding: 0px 20px;
-  border-right: 2px solid;
-}
-.updateForm label, .createForm label {
-  font-size: 24px;
 }
 
 #modalOverlay {
@@ -221,12 +129,6 @@ textarea {
   border-radius: 0 20px 20px 0;
   width: 40%;
   overflow: hidden;
-}
-
-select {
-  outline: none;
-  height: 30px;
-  border-radius: 5px;
 }
 
 /*# sourceMappingURL=login.css.map */

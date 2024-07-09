@@ -42,6 +42,16 @@
     height: 35px;
     width: 35px;
     margin-left: 20px;
+    background-color: black;
+    color: white;
+    transition:
+        background-color 0.4s ease-in-out,
+        color 0.4s ease-in-out;
+}
+
+.goBackLink:hover {
+    background-color: #caab79;
+    color: black;
 }
 
 .headerLink {
