@@ -31,9 +31,9 @@ $items = getItems($items, $category);
     <?php require_once(__DIR__ . '/header.php'); ?>
 
     <div id="topLink"></div>
-    <div id="divTest">
+    <div id="banner">
         <div class="bannerOverlay"></div>
-        <img src="https://i.ibb.co/SP9dgs5/8m1e66o7pyka1-1.webp" alt="elden_ring_banner" class="bannerTest">
+        <img src="https://i.ibb.co/SP9dgs5/8m1e66o7pyka1-1.webp" alt="elden_ring_banner" class="bannerImg">
     </div>
     <div class="bannerContent">
         <h1>
@@ -139,7 +139,7 @@ arrow_upward
             const items = document.querySelectorAll('#allItems .item');
             const searchField = document.getElementById('searchField');
             const searchInput = document.getElementById('searchInput');
-            const divTest = document.getElementById('divTest');
+            const banner = document.getElementById('banner');
             const headerTitle = document.getElementById('headerTitle');
             const header = document.getElementById('header');
             const filter = document.getElementById('filter');
@@ -232,7 +232,7 @@ arrow_upward
 
             window.addEventListener('scroll', () => {
                 const scrollY = window.scrollY;
-                divTest.classList.toggle('scrolled', scrollY > 50);
+                banner.classList.toggle('scrolled', scrollY > 50);
                 searchInput.classList.toggle('showTitle', scrollY > 365);
                 headerTitle.classList.toggle('showTitle', scrollY > 365);
                 header.classList.toggle('showTitle', scrollY > 365);

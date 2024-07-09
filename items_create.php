@@ -13,6 +13,7 @@ require_once(__DIR__ . '/header.php');
     <title>Elden Lore</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles/css/style.css">
+    <link rel="stylesheet" href="styles/css/createUpdateDelete.css">
     <link rel="stylesheet" href="styles/css/header.css">
     <link rel="stylesheet" href="styles/css/login.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">

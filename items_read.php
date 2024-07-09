@@ -103,6 +103,7 @@ WHERE c.comment_id = :comment_id');
     <title>Elden Lore - <?php echo htmlspecialchars($item['title']); ?></title>
     <link rel="stylesheet" href="styles/css/style.css">
     <link rel="stylesheet" href="styles/css/header.css">
+    <link rel="stylesheet" href="styles/css/createUpdateDelete.css">
     <link rel="stylesheet" href="styles/css/login.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
@@ -154,6 +155,18 @@ WHERE c.comment_id = :comment_id');
                     <?php endif; ?>
                     </div>
                 </div>
+                <?php if (!isset($_SESSION['LOGGED_USER'])) : ?>
+                    <div class="logSubLinks">
+                        <p>Pour pouvoir ajouter un commentaire</p>
+                        <div class="logSubBtns">
+                            <button>Se connecter</button>
+                            <p>ou</p>
+                            <button>Crée un compte</button>
+                        </div>
+
+                    </div>
+
+                    <?php endif; ?>
                 <?php if (isset($_SESSION['LOGGED_USER'])) : ?>
                     <form id="commentForm" method="POST">
                         <input class="commentsId" type="hidden" name="items_id" value="<?php echo($item['items_id']); ?>" />

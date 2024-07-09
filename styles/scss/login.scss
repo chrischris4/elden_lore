@@ -8,7 +8,6 @@
     font-family: 'nunito';
     height: 60vh;
 
-
     h1 {
         margin: 0;
         margin-bottom: 20px;
@@ -20,7 +19,8 @@
         width: 100%;
     }
 
-    #loginClose, #subClose, #createClose {
+    #loginClose,
+    #subClose {
         z-index: 5;
         cursor: pointer;
         position: absolute;
@@ -46,13 +46,6 @@ input:focus {
     outline: none;
 }
 
-button {
-    cursor: pointer;
-    font-size: 16px;
-    font-family: 'nunito';
-    background-color: #caab79;
-}
-
 textarea {
     font-family: 'nunito';
     padding: 10px;
@@ -67,8 +60,8 @@ textarea {
     opacity: 0.7;
 }
 
-
-#modalLogin, #modalSub {
+#modalLogin,
+#modalSub {
     transform: translateX(250%);
     transition: transform 0.4s ease-in-out;
     position: fixed;
@@ -82,95 +75,10 @@ textarea {
     display: flex;
 }
 
-#modalLogin.show, #modalSub.show {
+#modalLogin.show,
+#modalSub.show {
     transform: translateX(0%);
 }
-
-
-#delete, #update, #create, #read {
-    z-index: 2;
-    margin: 100px 0px;
-    width: 100%;
-    z-index: 5;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-
-    h1{
-        z-index: 2;
-        align-self: flex-start;
-        margin-left: 5%;
-    }
-}
-
-#updateContent, #deleteContent, #createContent, #readContent {
-    z-index: 2;
-    border-radius: 20px;
-    width: 90%;
-    justify-content: space-between;
-    display: flex;
-    background-color: rgba(53, 53, 53, 0.8);
-    position: relative;
-    padding: 40px 0px;
-}
-
-#deleteContent {
-    form {
-        width: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-
-        p {
-            margin-bottom: 20px;
-            font-weight: 100;
-            font-size: 14px;
-        }
-
-        button {
-            width: 50%;
-        }
-    }
-}
-
-.deletePreview {
-    display: flex;
-    justify-content: center;
-    width: 50%;
-}
-
-.itemContainer, .commentsContainer {
-    width: 50%;
-}
-
-.itemPreview {
-    width: 60%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.z {
-    z-index: 1;
-}
-
-.updateForm, .createForm {
-    width: 40%;
-    z-index: 2;
-    margin: 40px 0px;
-    display: flex;
-    flex-direction: column;
-    padding: 0px 20px;
-    border-right: 2px solid;
-
-    label{
-        font-size: 24px;
-    }
-}
-
 
 #modalOverlay {
     overflow: hidden;
@@ -219,7 +127,6 @@ textarea {
     align-self: center;
 }
 
-
 .loginForm {
     width: 60%;
     padding: 20px;
@@ -227,7 +134,7 @@ textarea {
     flex-direction: column;
     justify-content: space-between;
 
-    h2{
+    h2 {
         margin-top: 0;
     }
 }
@@ -239,12 +146,3 @@ textarea {
     width: 40%;
     overflow: hidden;
 }
-
-
-select {
-    outline: none;
-    height: 30px;
-    border-radius: 5px;
-}
-
-
