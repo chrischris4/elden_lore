@@ -11,6 +11,7 @@ $items = getItems($items, $category);
 
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,6 +25,7 @@ $items = getItems($items, $category);
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
+
 <body>
     <!-- inclusion de l'entête du site -->
     <?php require_once(__DIR__ . '/login.php'); ?>
@@ -44,90 +46,98 @@ $items = getItems($items, $category);
         <h2>c'est ici que les sans éclats partagent leurs connaissances concernant l'entre terre</h2>
         <div id="searchInput">
             <div class="searchFilter">
-                <input type="text" class="bannerInput" id="searchField" placeholder="Rechercher dans articles.."> 
+                <input type="text" class="bannerInput" id="searchField" placeholder="Rechercher dans articles..">
             </div>
         </div>
-</div>
+    </div>
     </div>
     <div id="allItems">
         <div class="articlesTitleContent">
-    <h2 id="articlesTitle">Articles</h2> 
-    <div id="moreFilter">
-                        <span class="material-symbols-rounded">
-                            sort
-                        </span>
-                    </div>
-    <div id="filter">
-                        <ul>
-                            <li data-category="all">TOUT</li>
-                            <li data-category="arme">ARMES</li>
-                            <li data-category="boss">BOSS</li>
-                            <li data-category="objet">OBJETS</li>
-                            <li data-category="personnage">PERSONNAGES</li>
-                        </ul>
-    </div>
-    </div>
-    <div id="articlesLink"></div>
-    <div class="allArticles">
-        <?php foreach ($items as $item) : ?>
-            <a href="items_read.php?id=<?php echo($item['items_id']); ?>">
-            <article class="item" data-category="<?php echo strtolower($item['category']); ?>">
-                <div class="articleBackground">
-                    <img src="https://i.ibb.co/JQWNDhW/dark-texture-watercolor-1.webp" alt="">
+            <h2 id="articlesTitle">Articles</h2>
+            <div id="filter">
+                <div id="filterIcon">
+                    <span class="material-symbols-rounded">
+                        sort
+                    </span>
                 </div>
-                <h3><?php echo($item['title']); ?></h3>
-                <img src="<?php echo($item['picture']); ?>" alt="elden_ring_banner" class="articleImg">
-                <div class="articleInfo"><?php echo $item['info_item']; ?></div>
-                <div class="authorInfo">
-                    <div>
-                        <?php if (isset($_SESSION['LOGGED_USER']) && $item['author'] === $_SESSION['LOGGED_USER']['pseudo']) : ?>
-                            <a class="link-warning updateLink" href="items_update.php?id=<?php echo($item['items_id']); ?>">
-                                <span class="material-symbols-rounded editIcon">edit</span>
-                            </a>
-                            <a class="link-danger deleteLink" href="items_delete.php?id=<?php echo($item['items_id']); ?>">
-                                <span class="material-symbols-rounded">delete</span>
-                            </a>
-                        <?php endif; ?>
-                    </div>
-                    <h4><?php echo displayAuthor($item['author'], $users); ?></h4>
+                <div id="filterLinks">
+                    <ul>
+                        <li data-category="all">TOUT</li>
+                        <li data-category="arme">ARMES</li>
+                        <li data-category="boss">BOSS</li>
+                        <li data-category="objet">OBJETS</li>
+                        <li data-category="personnage">PERSONNAGES</li>
+                    </ul>
                 </div>
-            </article>
-            </a>
-        <?php endforeach ?>
+            </div>
+        </div>
+        <div id="articlesLink"></div>
+        <div class="allArticles">
+            <?php foreach ($items as $item) : ?>
+                <a href="items_read.php?id=<?php echo ($item['items_id']); ?>">
+                    <article class="item" data-category="<?php echo strtolower($item['category']); ?>">
+                        <div class="articleBackground">
+                            <img src="https://i.ibb.co/JQWNDhW/dark-texture-watercolor-1.webp" alt="">
+                        </div>
+                        <h3><?php echo ($item['title']); ?></h3>
+                        <img src="<?php echo ($item['picture']); ?>" alt="elden_ring_banner" class="articleImg">
+                        <div class="articleInfo"><?php echo $item['info_item']; ?></div>
+                        <div class="authorInfo">
+                            <div>
+                                <?php if (isset($_SESSION['LOGGED_USER']) && $item['author'] === $_SESSION['LOGGED_USER']['pseudo']) : ?>
+                                    <a class="link-warning updateLink" href="items_update.php?id=<?php echo ($item['items_id']); ?>">
+                                        <span class="material-symbols-rounded editIcon">edit</span>
+                                    </a>
+                                    <a class="link-danger deleteLink" href="items_delete.php?id=<?php echo ($item['items_id']); ?>">
+                                        <span class="material-symbols-rounded">delete</span>
+                                    </a>
+                                <?php endif; ?>
+                            </div>
+                            <h4><?php echo displayAuthor($item['author'], $users); ?></h4>
+                        </div>
+                    </article>
+                </a>
+            <?php endforeach ?>
         </div>
         <div class="lore">
             <h2 id="loreTitle">Lore des sans éclats</h2>
             <div id="loreLink"></div>
             <div class="loreSection">
-        <img src="https://i.ibb.co/DCdZDhC/UYGr9ddyp-BP3-Qux-C6zf-Ky-Q.jpg" alt="" class="loreImg">
-        <p>Le commencement de cette histoire se déroule non pas dans l’Entre-terre, mais dans le cosmos, où sont présentes des divinités supérieures que nous ne verrons jamais. Et celle qui nous intéresse se nomme la Volonté suprême.
+                <img src="https://i.ibb.co/DCdZDhC/UYGr9ddyp-BP3-Qux-C6zf-Ky-Q.jpg" alt="" class="loreImg">
+                <p>Le commencement de cette histoire se déroule non pas dans l’Entre-terre, mais dans le cosmos, où sont présentes des divinités supérieures que nous ne verrons jamais. Et celle qui nous intéresse se nomme la Volonté suprême.
 
-Afin de prendre possession de l’Entre-terre, elle envoya une comète avec en son sein la bête d’Elden, qui est la véritable forme du Cercle d’Elden.</p></div>
-<div class="loreSection reverse">
-        <img src="https://i.ibb.co/3yG67BT/dohqbcwklz991.webp" alt="" class="loreImg">
-        <p>De l’impact de la comète va pousser un arbre géant doré, symbole dans tout l’Entre-terre de la Volonté suprême. Cette dernière, maintenant installée dans l’Entre-terre, va devoir trouver le moyen d’étendre son influence.</p></div><div class="loreSection">
-        <img src="https://i.ibb.co/WFcgYJ8/ded7d33697cdace36e05e4b29dddd141-0.png" alt="" class="loreImg">
-        <p>Pour commencer, elle va créer des agents qui transmettent les ordres de la divinité extérieure en la présence des Deux Doigts ; ordres qui passeront ensuite par les Augures des Doigts, les seuls êtres capables de retranscrire le langage de la Volonté suprême dans une langue compréhensible.</p></div>
-        <div class="loreSection reverse">
-        <img src="https://i.ibb.co/kQG2nVt/Queen-Marika-the-Eternal.webp" alt="" class="loreImg">
-        <p>Tout étant quasiment en place, il ne manque donc plus qu’un Dieu ou une Déesse pour représenter la Volonté suprême auprès des peuples, ainsi que de pouvoir agir pour étendre les commandements de la divinité extérieure. Pour cela, la Volonté suprême va se tourner vers Marika, du peuple des « Numen », race dont on sait peu de choses, en dehors du fait qu’ils viennent d’ailleurs que de l’Entre-terre.
+                    Afin de prendre possession de l’Entre-terre, elle envoya une comète avec en son sein la bête d’Elden, qui est la véritable forme du Cercle d’Elden.</p>
+            </div>
+            <div class="loreSection reverse">
+                <img src="https://i.ibb.co/3yG67BT/dohqbcwklz991.webp" alt="" class="loreImg">
+                <p>De l’impact de la comète va pousser un arbre géant doré, symbole dans tout l’Entre-terre de la Volonté suprême. Cette dernière, maintenant installée dans l’Entre-terre, va devoir trouver le moyen d’étendre son influence.</p>
+            </div>
+            <div class="loreSection">
+                <img src="https://i.ibb.co/WFcgYJ8/ded7d33697cdace36e05e4b29dddd141-0.png" alt="" class="loreImg">
+                <p>Pour commencer, elle va créer des agents qui transmettent les ordres de la divinité extérieure en la présence des Deux Doigts ; ordres qui passeront ensuite par les Augures des Doigts, les seuls êtres capables de retranscrire le langage de la Volonté suprême dans une langue compréhensible.</p>
+            </div>
+            <div class="loreSection reverse">
+                <img src="https://i.ibb.co/kQG2nVt/Queen-Marika-the-Eternal.webp" alt="" class="loreImg">
+                <p>Tout étant quasiment en place, il ne manque donc plus qu’un Dieu ou une Déesse pour représenter la Volonté suprême auprès des peuples, ainsi que de pouvoir agir pour étendre les commandements de la divinité extérieure. Pour cela, la Volonté suprême va se tourner vers Marika, du peuple des « Numen », race dont on sait peu de choses, en dehors du fait qu’ils viennent d’ailleurs que de l’Entre-terre.
 
-Marika est donc la nouvelle Déesse et gagne le titre d’Empyréenne, une distinction obtenue en étant l’enfant de Dieu et choisi par les Deux Doigts afin de remplacer le dieu en place. Elle va alors hériter du cercle d’Elden, un ensemble de Runes qui régit les règles les plus élémentaires du monde de l’Entre-terre, comme la vie et la mort. Toutes ses règles se font appeler l’Ordre d’or.</p></div>
+                    Marika est donc la nouvelle Déesse et gagne le titre d’Empyréenne, une distinction obtenue en étant l’enfant de Dieu et choisi par les Deux Doigts afin de remplacer le dieu en place. Elle va alors hériter du cercle d’Elden, un ensemble de Runes qui régit les règles les plus élémentaires du monde de l’Entre-terre, comme la vie et la mort. Toutes ses règles se font appeler l’Ordre d’or.</p>
+            </div>
 
-<div class="loreSection">
-        <img src="https://i.ibb.co/CVymbJK/er-sote-screenshot-4.jpg" alt="" class="loreImg">
-        <p> Quelque temps plus tard, pour une raison ou une autre, Marika brisa le cercle d'elden, laissant éclater une guerre au sein de l'entre terre, une guerre dont le but est de devenir le nouveau seigneur l'Elden et par la même occasion appliquer un nouvel Ordre, c'est dans ce context, que les sans éclats, tentent à leur tour de s'emparer du trône tant convoité.</p></div>
+            <div class="loreSection">
+                <img src="https://i.ibb.co/CVymbJK/er-sote-screenshot-4.jpg" alt="" class="loreImg">
+                <p> Quelque temps plus tard, pour une raison ou une autre, Marika brisa le cercle d'elden, laissant éclater une guerre au sein de l'entre terre, une guerre dont le but est de devenir le nouveau seigneur l'Elden et par la même occasion appliquer un nouvel Ordre, c'est dans ce context, que les sans éclats, tentent à leur tour de s'emparer du trône tant convoité.</p>
+            </div>
         </div>
     </div>
 
     <a href="#topLink">
-    <div id="goBackTop">
-    <span class="material-symbols-rounded">
-arrow_upward
-</span>
-    </div>
+        <div id="goBackTop">
+            <span class="material-symbols-rounded">
+                arrow_upward
+            </span>
+        </div>
     </a>
-    
+
     <?php require_once(__DIR__ . '/footer.php'); ?>
 
     <!-- ////////////////////////////////SCRIPT/////////////////////////////////// -->
@@ -135,16 +145,22 @@ arrow_upward
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const overlay = document.getElementById('modalOverlay');
-            const filterLinks = document.querySelectorAll('#filter ul li');
+            const filterLinks = document.querySelectorAll('#filterLinks ul li');
             const items = document.querySelectorAll('#allItems .item');
             const searchField = document.getElementById('searchField');
             const searchInput = document.getElementById('searchInput');
             const banner = document.getElementById('banner');
             const headerTitle = document.getElementById('headerTitle');
             const header = document.getElementById('header');
+            const filterIcon = document.getElementById('filterIcon');
             const filter = document.getElementById('filter');
 
-//////////////////////////////FILTERS////////////////////////////////////////////
+            //////////////////////////////FILTERS////////////////////////////////////////////
+
+            filterIcon.addEventListener('click', (e) => {
+                e.preventDefault();
+                filter.classList.toggle('showFilters');
+            });
 
             filterLinks.forEach(link => {
                 link.addEventListener('click', (e) => {
@@ -184,54 +200,56 @@ arrow_upward
             });
 
             <?php if (!isset($_SESSION['LOGGED_USER'])) : ?>
-            const loginLink = document.getElementById('loginLink');
-            const loginForm = document.getElementById('modalLogin');
-            const subLink = document.getElementById('subLink');
-            const subForm = document.getElementById('modalSub');
-            const subClose = document.getElementById('subClose');
-            const loginClose = document.getElementById('loginClose');
+                const loginLink = document.getElementById('loginLink');
+                const loginForm = document.getElementById('modalLogin');
+                const subLink = document.getElementById('subLink');
+                const subForm = document.getElementById('modalSub');
+                const subClose = document.getElementById('subClose');
+                const loginClose = document.getElementById('loginClose');
+                const goBackTop = document.getElementById('goBackTop');
 
-////////////////////////////LOGIN SUB SCROLL/////////////////////////////////////////
+                ////////////////////////////LOGIN SUB SCROLL/////////////////////////////////////////
 
-            if (loginLink && loginForm) {
-                loginLink.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    document.body.classList.add('no-scroll');
-                    loginForm.classList.add('show');
-                    overlay.classList.add('showOverlay');
-                });
-            }
+                if (loginLink && loginForm) {
+                    loginLink.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        document.body.classList.add('no-scroll');
+                        loginForm.classList.add('show');
+                        overlay.classList.add('showOverlay');
+                    });
+                }
 
-            if (subLink && subForm && subClose) {
-                subLink.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    document.body.classList.add('no-scroll');
-                    subForm.classList.add('show');
-                    overlay.classList.add('showOverlay');
-                });
+                if (subLink && subForm && subClose) {
+                    subLink.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        document.body.classList.add('no-scroll');
+                        subForm.classList.add('show');
+                        overlay.classList.add('showOverlay');
+                    });
 
-                subClose.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    document.body.classList.remove('no-scroll');
-                    subForm.classList.remove('show');
-                    overlay.classList.remove('showOverlay');
-                });
-            }
+                    subClose.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        document.body.classList.remove('no-scroll');
+                        subForm.classList.remove('show');
+                        overlay.classList.remove('showOverlay');
+                    });
+                }
 
-            if (loginClose) {
-                loginClose.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    document.body.classList.remove('no-scroll');
-                    loginForm.classList.remove('show');
-                    overlay.classList.remove('showOverlay');
-                });
-            }
+                if (loginClose) {
+                    loginClose.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        document.body.classList.remove('no-scroll');
+                        loginForm.classList.remove('show');
+                        overlay.classList.remove('showOverlay');
+                    });
+                }
             <?php endif; ?>
 
-//////////////////////////////FIX WHEN SCROLL/////////////////////////////////////
+            //////////////////////////////FIX WHEN SCROLL/////////////////////////////////////
 
             window.addEventListener('scroll', () => {
                 const scrollY = window.scrollY;
+                goBackTop.classList.toggle('showGoBackTop', scrollY > 365);
                 banner.classList.toggle('scrolled', scrollY > 50);
                 searchInput.classList.toggle('showTitle', scrollY > 365);
                 headerTitle.classList.toggle('showTitle', scrollY > 365);
@@ -239,18 +257,19 @@ arrow_upward
             });
         });
 
-///////////////////////////////SCROLL EFFECT FOR LINKS/////////////////////////////////
+        ///////////////////////////////SCROLL EFFECT FOR LINKS/////////////////////////////////
 
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
 
-                    // Défilement fluide vers l'élément ciblé
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
+                // Défilement fluide vers l'élément ciblé
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
                 });
             });
+        });
     </script>
 </body>
+
 </html>

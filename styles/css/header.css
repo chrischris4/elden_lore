@@ -23,22 +23,11 @@
 }
 #header li {
   font-size: 14px;
-  margin-right: 20px;
 }
 
 #header.headerStyle {
   background-color: black;
   border-bottom: 2px solid #caab79;
-}
-
-.loggedLink {
-  position: absolute;
-  left: 80px;
-  color: black;
-}
-
-.loggedLink:hover {
-  color: black;
 }
 
 .goBackLink {
@@ -52,13 +41,19 @@
   margin-left: 20px;
 }
 
-.createLink {
-  margin-right: 100px;
+.headerLink {
+  border-radius: 50px;
+  padding: 3px 6px;
+  background-color: rgba(202, 171, 121, 0);
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
   color: white;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
-.loginLink, .subLink {
-  margin-right: 20px;
+.headerLink:hover {
+  color: black;
+  background-color: #caab79;
+  box-shadow: 0px 0px 8px 8px #caab79;
 }
 
 #header.showTitle {
@@ -92,12 +87,8 @@
   z-index: 50;
   display: flex;
   position: absolute;
-  top: 35px;
+  top: 31px;
   right: 80px;
-}
-
-.headerLink {
-  margin-right: 20px;
 }
 
 .userSettings {
@@ -105,7 +96,7 @@
   display: flex;
   background: rgba(202, 171, 121, 0);
   z-index: 50;
-  width: 55px;
+  width: 45px;
   height: 50px;
   padding-left: 5px;
   border-radius: 100px;
@@ -127,7 +118,11 @@
   align-items: flex-start;
 }
 .userSettings li {
-  width: 150px;
+  margin-left: 10px;
+  transition: color 0.2s ease-in-out;
+}
+.userSettings li:hover {
+  color: black;
 }
 
 .userSettings:hover {
@@ -143,35 +138,12 @@
   color: black;
 }
 
-.loginWelcome {
-  font-size: 14px;
-  overflow: hidden;
-  display: flex;
-  background: rgba(202, 171, 121, 0);
-  z-index: 50;
-  width: 55px;
-  height: 50px;
-  padding-left: 5px;
-  border-radius: 100px;
-  justify-content: flex-start;
-  align-items: center;
-  margin: 20px;
-  transition: width 0.4s ease-in-out, background 0.4s ease-in-out;
-}
-.loginWelcome ul {
-  padding: 0;
-  display: flex;
-  align-items: flex-start;
-}
-.loginWelcome li {
-  width: 180px;
+#createLink {
+  width: 170px;
 }
 
-.loginWelcome:hover {
-  justify-content: flex-start;
-  background: #caab79;
-  width: 450px;
-  display: flex;
+#subLink {
+  width: 150px;
 }
 
 .profilePicture {

@@ -38,6 +38,3 @@ $insertItemsStatement->execute([
 ]);
 
 redirectToUrl('index.php');
-
-
-?>

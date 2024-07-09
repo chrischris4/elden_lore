@@ -1,21 +1,24 @@
-
 article {
     position: relative;
     overflow: hidden;
-    font-family: "agmenaRegular";
+    font-family: 'agmenaRegular';
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(0deg, rgb(41, 41, 41) 75%, rgb(116, 97, 76) 100%);
+    background: linear-gradient(
+        0deg,
+        rgb(41, 41, 41) 75%,
+        rgb(116, 97, 76) 100%
+    );
     border-radius: 10px;
     padding: 20px;
     width: 26%;
     margin-bottom: 40px;
     border: 8px solid black;
     transition: scale 0.1s ease-in-out;
-  }
-  article .articleImg {
+}
+article .articleImg {
     z-index: 2;
     object-fit: cover;
     border: 4px solid black;
@@ -23,21 +26,21 @@ article {
     margin-top: 20px;
     width: 100%;
     height: 230px;
-  }
-  article .articleBackground {
+}
+article .articleBackground {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     opacity: 0.2;
-  }
-  article .articleBackground img {
+}
+article .articleBackground img {
     opacity: 1;
-  }
-  article .articleInfo {
+}
+article .articleInfo {
     overflow: auto;
     max-height: 55px;
-    font-family: "agmenaBook";
+    font-family: 'agmenaBook';
     z-index: 2;
     width: 100%;
     font-size: 18px;
@@ -45,55 +48,55 @@ article {
     align-self: flex-start;
     padding-bottom: 20px;
     border-bottom: 4px solid black;
-  }
-  article .articleInfo::-webkit-scrollbar {
+}
+article .articleInfo::-webkit-scrollbar {
     width: 5px;
-  }
-  article .articleInfo::-webkit-scrollbar-thumb {
+}
+article .articleInfo::-webkit-scrollbar-thumb {
     background-color: rgb(61, 61, 61);
     border-radius: 10px;
     height: 20px;
-  }
-  article .articleInfo::-webkit-scrollbar-thumb:hover {
+}
+article .articleInfo::-webkit-scrollbar-thumb:hover {
     background-color: #caab79;
-  }
-  article .articleInfo::-webkit-scrollbar-track {
+}
+article .articleInfo::-webkit-scrollbar-track {
     background: none;
-  }
-  article .authorInfo {
+}
+article .authorInfo {
     z-index: 2;
     font-size: 16px;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-  }
-  article .editIcon {
+}
+article .editIcon {
     margin-right: 20px;
-  }
-  article h3 {
+}
+article h3 {
     z-index: 2;
     font-size: 22px;
     margin: 0;
     align-self: flex-start;
-  }
-  article h4 {
+}
+article h4 {
     z-index: 2;
     align-self: flex-end;
     margin: 0;
-  }
-  
-  article:hover {
+}
+
+article:hover {
     scale: 1.02;
-  }
-  
-  article.preview:hover {
+}
+
+article.preview:hover {
     scale: 1;
-  }
-  
-  .preview {
+}
+
+.preview {
     align-self: center;
     z-index: 1;
     width: 400px;
     margin-bottom: 0;
-  }
+}

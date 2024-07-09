@@ -50,6 +50,3 @@ if (isset($postData['pseudo']) && isset($postData['password'])) {
     header('Location: /index.php'); // Redirection vers la page de login
     exit();
 }
-
-
-?>

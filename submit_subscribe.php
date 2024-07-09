@@ -94,30 +94,30 @@ try {
 <!-- Formulaire d'inscription -->
 <?php if (!isset($_SESSION['LOGGED_USER'])) : ?>
     <div id="modalSub">
-    <div class="modalForm">
-    <span class="material-symbols-rounded" id="subClose">
-close
-</span>
-        <h2>Crée un compte</h2>
-        <form action="submit_subscribe.php" method="POST">
-            <!-- si message d'erreur on l'affiche -->
-            <?php if (isset($_SESSION['SUBSCRIBE_ERROR_MESSAGE'])) : ?>
-                <div class="subscribeError" role="alert">
-                    <?php echo $_SESSION['SUBSCRIBE_ERROR_MESSAGE'];
-                    unset($_SESSION['SUBSCRIBE_ERROR_MESSAGE']); ?>
+        <div class="modalForm">
+            <span class="material-symbols-rounded" id="subClose">
+                close
+            </span>
+            <h2>Crée un compte</h2>
+            <form action="submit_subscribe.php" method="POST">
+                <!-- si message d'erreur on l'affiche -->
+                <?php if (isset($_SESSION['SUBSCRIBE_ERROR_MESSAGE'])) : ?>
+                    <div class="subscribeError" role="alert">
+                        <?php echo $_SESSION['SUBSCRIBE_ERROR_MESSAGE'];
+                        unset($_SESSION['SUBSCRIBE_ERROR_MESSAGE']); ?>
+                    </div>
+                <?php endif; ?>
+                <div class="formSection">
+                    <label for="pseudo" class="formLabel">Pseudo</label>
+                    <input type="text" class="formControl" id="pseudo" name="pseudo" placeholder="Votre pseudo">
                 </div>
-            <?php endif; ?>
-            <div class="formSection">
-                <label for="pseudo" class="formLabel">Pseudo</label>
-                <input type="text" class="formControl" id="pseudo" name="pseudo" placeholder="Votre pseudo">
-            </div>
-            <div class="formSection">
-                <label for="password" class="formLabel">Mot de passe</label>
-                <input type="password" class="formControl" id="password" name="password">
-            </div>
-            <button type="submit" class="formBtn">Envoyer</button>
-        </form>
-    </div>
+                <div class="formSection">
+                    <label for="password" class="formLabel">Mot de passe</label>
+                    <input type="password" class="formControl" id="password" name="password">
+                </div>
+                <button type="submit" class="formBtn">Envoyer</button>
+            </form>
+        </div>
     </div>
 <?php else : ?>
     <!-- Si utilisateur/trice bien connectée on affiche un message de succès -->

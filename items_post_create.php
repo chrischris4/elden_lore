@@ -82,4 +82,3 @@ $insertItem->execute([
 ]);
 
 redirectToUrl('index.php');
-?>
