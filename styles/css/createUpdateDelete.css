@@ -78,7 +78,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0px 20px;
 
     label {
         font-size: 20px;
@@ -120,7 +119,6 @@ select {
         font-family: 'nunito';
         padding: 10px;
         resize: none;
-        resize: vertical;
         outline: none;
         border-radius: 5px;
         height: 45px;
@@ -138,6 +136,7 @@ select {
 }
 
 .comments {
+    position: relative;
     width: 80%;
     display: flex;
     flex-direction: column;
@@ -184,10 +183,17 @@ select {
 }
 
 #commentMessage {
+    padding: 0 10px;
+    border-radius: 5px;
+    background: #3a3a3a;
     position: absolute;
-    bottom: 0;
-    transform: translateY(-200%);
+    bottom: 145px;
+    right: 0;
     display: flex;
+}
+
+#commentMessage p {
+    margin: 4px;
 }
 
 .commentsId {

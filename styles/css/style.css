@@ -80,6 +80,20 @@ button {
   border: 2px solid black;
 }
 
+input {
+  color: white;
+  padding: 5px;
+  border-radius: 10px;
+  font-size: 14px;
+  border: 2px solid;
+  background-color: inherit;
+}
+
+input:focus {
+  border: 2px solid #caab79;
+  outline: none;
+}
+
 .bannerContent {
   display: flex;
   justify-content: center;
@@ -121,6 +135,10 @@ button {
   transition: opacity 0.6s ease-in-out;
 }
 
+.opacityLow {
+  opacity: 0.7;
+}
+
 #banner.scrolled {
   opacity: 0.7;
 }
@@ -142,7 +160,7 @@ button {
 }
 
 .bannerInput {
-  width: 100%;
+  width: 95%;
   padding: 7px 10px 5px;
   font-size: 16px;
   border-radius: 20px;
@@ -155,7 +173,7 @@ button {
 }
 
 .bannerInput::placeholder {
-  color: rgb(184, 184, 184); /* Rouge pour les navigateurs modernes */
+  color: white;
 }
 
 #searchInput {
@@ -171,14 +189,9 @@ button {
   bottom: 220px;
 }
 
-#searchInput.showTitle {
+#searchInput.fixed {
   position: fixed;
   top: 25px;
-}
-
-.searchFilter {
-  z-index: 12;
-  display: flex;
 }
 
 .articlesTitleContent {
@@ -238,29 +251,6 @@ button {
   background-color: #caab79;
 }
 
-.searchBtns {
-  margin-top: 10px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.searchBtn {
-  font-size: 22px;
-  font-family: "agmenaBook";
-  background-color: rgba(0, 0, 0, 0.3);
-  color: white;
-  border-radius: 20px;
-  width: 47.5%;
-  border: 2px solid #caab79;
-}
-
-#headerTitle.opacity {
-  position: fixed;
-  top: 20px;
-  opacity: 1;
-  margin-left: 0;
-}
-
 #allItems {
   z-index: 0;
   position: relative;
@@ -280,10 +270,6 @@ button {
 
 .hidden {
   display: none;
-}
-
-.opacity {
-  opacity: 1;
 }
 
 #loreTitle,
@@ -362,19 +348,6 @@ button {
 
 #goBackTop.showGoBackTop {
   transform: translateX(0%);
-}
-
-footer {
-  background-color: black;
-  z-index: 50;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  padding-bottom: 50px;
-}
-footer h2 {
-  font-family: "nunito";
-  font-size: 16px;
 }
 
 /*# sourceMappingURL=style.css.map */

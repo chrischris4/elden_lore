@@ -104,6 +104,7 @@ WHERE c.comment_id = :comment_id');
     <title>Elden Lore - <?php echo htmlspecialchars($item['title']); ?></title>
     <link rel="stylesheet" href="styles/css/style.css">
     <link rel="stylesheet" href="styles/css/header.css">
+    <link rel="stylesheet" href="styles/css/footer.css">
     <link rel="stylesheet" href="styles/css/createUpdateDelete.css">
     <link rel="stylesheet" href="styles/css/article.css">
     <link rel="stylesheet" href="styles/css/login.css">

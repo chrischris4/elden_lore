@@ -20,6 +20,7 @@ $items = getItems($items, $category);
     <link rel="stylesheet" href="styles/css/style.css">
     <link rel="stylesheet" href="styles/css/article.css">
     <link rel="stylesheet" href="styles/css/header.css">
+    <link rel="stylesheet" href="styles/css/footer.css">
     <link rel="stylesheet" href="styles/css/login.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -101,7 +102,7 @@ $items = getItems($items, $category);
             <?php endforeach ?>
         </div>
         <div class="lore">
-            <h2 id="loreTitle">Lore des sans éclats</h2>
+            <h2 id="loreTitle">Lore</h2>
             <div id="loreLink"></div>
             <div class="loreSection">
                 <img src="https://i.ibb.co/DCdZDhC/UYGr9ddyp-BP3-Qux-C6zf-Ky-Q.jpg" alt="" class="loreImg">
@@ -252,7 +253,7 @@ $items = getItems($items, $category);
                 const scrollY = window.scrollY;
                 goBackTop.classList.toggle('showGoBackTop', scrollY > 365);
                 banner.classList.toggle('scrolled', scrollY > 50);
-                searchInput.classList.toggle('showTitle', scrollY > 365);
+                searchInput.classList.toggle('fixed', scrollY > 365);
                 headerTitle.classList.toggle('showTitle', scrollY > 365);
                 header.classList.toggle('showTitle', scrollY > 365);
             });

@@ -91,6 +91,13 @@
   opacity: 1;
 }
 
+#headerTitle.opacity {
+  position: fixed;
+  top: 20px;
+  opacity: 1;
+  margin-left: 0;
+}
+
 #headerNav {
   z-index: 50;
   display: flex;

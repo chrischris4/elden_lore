@@ -33,6 +33,7 @@ $item = $retrieveItemStatement->fetch(PDO::FETCH_ASSOC);
     <title>Elden Lore</title>
     <link rel="stylesheet" href="styles/css/style.css">
     <link rel="stylesheet" href="styles/css/header.css">
+    <link rel="stylesheet" href="styles/css/footer.css">
     <link rel="stylesheet" href="styles/css/createUpdateDelete.css">
     <link rel="stylesheet" href="styles/css/article.css">
     <link rel="stylesheet" href="styles/css/login.css">
