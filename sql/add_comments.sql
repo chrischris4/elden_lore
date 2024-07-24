@@ -1,4 +1,4 @@
-USE `partage_de_recettes`;
+USE `elden_lore`;
 
 CREATE TABLE IF NOT EXISTS `comments` (
     `comment_id` int(11) NOT NULL AUTO_INCREMENT,

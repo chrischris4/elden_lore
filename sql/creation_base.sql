@@ -1,6 +1,6 @@
 -- Création de la BDD
-CREATE DATABASE IF NOT EXISTS `partage_de_recettes`;
-USE `partage_de_recettes`;
+CREATE DATABASE IF NOT EXISTS `elden_lore`;
+USE `elden_lore`;
 
 -- Création de la table items
 CREATE TABLE IF NOT EXISTS `items` (
@@ -24,14 +24,3 @@ CREATE TABLE IF NOT EXISTS `users` (
     `age` INT NOT NULL,
     PRIMARY KEY (`user_id`)
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
-delete from `users`;
-insert into `users` (`age`, `email`, `full_name`, `password`, `user_id`) values (34, 'mickael.andrieu@exemple.com', 'Mickaël Andrieu', 'devine', 1);
-insert into `users` (`age`, `email`, `full_name`, `password`, `user_id`) values (34, 'mathieu.nebra@exemple.com', 'Mathieu Nebra', 'MiamMiam', 2);
-insert into `users` (`age`, `email`, `full_name`, `password`, `user_id`) values (28, 'laurene.castor@exemple.com', 'Laurène Castor', 'laCasto28', 3);
-
-delete from `items`;
-insert into `items` (`author`, `is_enabled`, `info_item`, `items_id`, `title`) values ('mickael.andrieu@exemple.com', 1, "Malenia est une empyréenne, soeur de miquella, fille de radagon et de marika", 1, 'Malenia');
-insert into `items` (`author`, `is_enabled`, `info_item`, `items_id`, `title`) values ('mickael.andrieu@exemple.com', 1, "Radagon est, avec marika, créateur du cercle d'elden", 2, 'Radagon');
-insert into `items` (`author`, `is_enabled`, `info_item`, `items_id`, `title`) values ('laurene.castor@exemple.com', 1, "Marika est beaucoup de choses", 4, 'Marika');
-insert into `items` (`author`, `is_enabled`, `info_item`, `items_id`, `title`) values ('mathieu.nebra@exemple.com', 1, "Ranni est une empyréenne, soeur de Rakyard et Radhan, fille de Rennala et de Radagon", 3, 'Ranni');
